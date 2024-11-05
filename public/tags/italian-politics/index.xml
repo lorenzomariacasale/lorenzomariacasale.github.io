@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Italian Politics | Lorenzo Maria Casale</title>
+    <link>http://localhost:1313/tags/italian-politics/</link>
+      <atom:link href="http://localhost:1313/tags/italian-politics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Italian Politics</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 06 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://localhost:1313/media/icon_hu7729264130191091259.png</url>
+      <title>Italian Politics</title>
+      <link>http://localhost:1313/tags/italian-politics/</link>
+    </image>
+    
+    <item>
+      <title>The Role of Family Ties in Political Outcomes</title>
+      <link>http://localhost:1313/work_in_progress/family/</link>
+      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/work_in_progress/family/</guid>
+      <description>&lt;p&gt;This paper is currently under development, focusing on how family ties impact political outcomes in Italian municipalities.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
