@@ -4,9 +4,6 @@ date: 2023-01-15
 authors:
   - "Lorenzo Maria Casale"
   - "Luca Vitale"
-authors_linked:
-  - "Lorenzo Maria Casale"
-  - "[Luca Vitale](https://sites.google.com/nyu.edu/lucavitale)"
 summary: "This is a summary of the first published paper."
 tags:
   - political economy
