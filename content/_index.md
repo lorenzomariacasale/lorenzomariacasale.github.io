@@ -32,14 +32,12 @@ sections:
           parallax: false
   - block: markdown
     content:
-      title: '📚 My Research'
+      title: 'My Research'
       subtitle: ''
       text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
+        I’m passionate about exploring the intersections of political economy and cultural economics, two fields that offer deep insights into how societies evolve and adapt.
 
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
-        
-        Please reach out to collaborate 😃
+        Currently, I’m focused on understanding how economic forces and cultural trends influence political structures and societal behaviors. From the role of family ties in shaping political outcomes to the ways in which cultural phenomena propagate across societies, my work seeks to uncover the underlying mechanisms that drive these complex interactions.
     design:
       columns: '1'
   - block: collection
