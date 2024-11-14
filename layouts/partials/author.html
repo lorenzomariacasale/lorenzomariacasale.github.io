@@ -1,0 +1,18 @@
+{{ if .Params.authors }}
+  <div class="post-authors">
+    {{ $authors := .Params.authors }}
+    {{ range $index, $authorID := $authors }}
+      {{ if $index }}, {{ end }}
+      {{ $author := site.GetPage (printf "/authors/%s/_index.md" $authorID) }}
+      {{ if $author }}
+        {{ if $author.Params.website }}
+          <a href="{{ $author.Params.website }}">{{ $author.Params.name }}</a>
+        {{ else }}
+          <a href="{{ $author.Permalink }}">{{ $author.Params.name }}</a>
+        {{ end }}
+      {{ else }}
+        {{ $authorID }}
+      {{ end }}
+    {{ end }}
+  </div>
+{{ end }}
