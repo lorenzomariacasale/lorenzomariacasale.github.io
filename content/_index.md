@@ -50,7 +50,6 @@ sections:
         featured_only: true
     design:
       view: citation
-
   - block: collection
     content:
       title: Working Paper
@@ -61,7 +60,6 @@ sections:
     design:
       view: article-grid
       columns: 1
-
   - block: collection
     content:
       title: Work in Progress
@@ -71,7 +69,6 @@ sections:
           - wip
     design:
       view: citation
-
   - block: collection
     id: talks
     content:
@@ -82,7 +79,6 @@ sections:
     design:
       view: article-grid
       columns: 1
-
   - block: collection
     id: news
     content:
