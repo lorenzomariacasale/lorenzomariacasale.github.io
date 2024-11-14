@@ -40,26 +40,26 @@ sections:
         Currently, I’m focused on understanding how economic forces and cultural trends influence political structures and societal behaviors. From the role of family ties in shaping political outcomes to the ways in which cultural phenomena propagate across societies, my work seeks to uncover the underlying mechanisms that drive these complex interactions.
     design:
       columns: '1'
-  - block: collection
-    id: research
-    content:
-      title: Published Papers
-      filters:
-        folders:
-          - publication
-        featured_only: true
-    design:
-      view: citation
-  - block: collection
-    content:
-      title: Working Paper
-      text: ""
-      filters:
-        folders:
-          - working_papers
-    design:
-      view: article-grid
-      columns: 1
+  #- block: collection
+  #  id: research
+  #  content:
+  #    title: Published Papers
+  #    filters:
+  #      folders:
+  #        - publication
+  #      featured_only: true
+  #  design:
+  #    view: citation
+  #- block: collection
+  #  content:
+  #    title: Working Paper
+  #    text: ""
+  #    filters:
+  #      folders:
+  #        - working_papers
+  #  design:
+  #    view: article-grid
+  #    columns: 1
   - block: collection
     content:
       title: Work in Progress
