@@ -2,7 +2,7 @@
 title: "Work in Progress Title"
 date: 2023-01-15
 authors:
-  - "Lorenzo Maria Casale"
+  - admin
   - "Co-author Name"
 summary: "This is a summary of the first published paper."
 tags:
