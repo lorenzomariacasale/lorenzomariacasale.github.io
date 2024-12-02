@@ -3,7 +3,7 @@ title: "Family Mayors: Undermined Accountability in Italian Municipalities"
 date: 2023-01-15
 authors:
   - admin
-  - luca  # This should match the folder name of the author profile
+  - "Luca Vitale"  # This should match the folder name of the author profile
 summary: "This is a summary of the first published paper."
 tags:
   - political economy
