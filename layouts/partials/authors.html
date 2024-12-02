@@ -1,9 +1,0 @@
-{{ range .Params.authors }}
-  {{ if eq . "Luca Vitale" }}
-    <a href="https://sites.google.com/nyu.edu/lucavitale">Luca Vitale</a>
-  {{ else if eq . "admin" }}
-    Lorenzo Maria Casale
-  {{ else }}
-    {{ . }}
-  {{ end }}
-{{ end }}
