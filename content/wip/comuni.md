@@ -14,5 +14,5 @@ url_dataset: "uploads/paper1-dataset.csv"
 url_poster: "uploads/paper1-poster.pdf"
 url_slides: "uploads/paper1-slides.pdf"
 url_video: "https://youtu.be/your-video-id"
-url_luca: "🌐 [Luca Vitale's website](https://sites.google.com/nyu.edu/lucavitale)"
+url_custom = [{icon_pack = "fab", icon="twitter", name="Follow", url = "https://twitter.com/georgecushen"}]
 ---
