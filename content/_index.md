@@ -14,12 +14,12 @@ sections:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
       text: ""
-      # Show call-to-action buttons under your biography
-      buttons:
-        - text: Download CV
-          url: uploads/resume.pdf
-        - text: Contact Me
-          url: contact/  # Link to your contact page
+      # Show a call-to-action button under your biography? (optional)
+      html: |
+        <div class="button-container">
+          <a href="uploads/resume.pdf" class="btn">Download CV</a>
+          <a href="uploads/resume.pdf" class="btn">Download CV</a>
+        </div>
     design:
       css_class: dark
       background:
