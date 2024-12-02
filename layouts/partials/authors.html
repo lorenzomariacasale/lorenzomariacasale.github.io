@@ -1,0 +1,15 @@
+
+{{ range .Params.authors }}
+  {{ $author := site.GetPage (printf "authors/%s" .) }}
+  {{ if $author }}
+    {{ if $author.Params.external_link }}
+      <a href="{{ $author.Params.external_link }}">{{ $author.Params.name }}</a>
+    {{ else }}
+      {{ $author.Params.name }}
+    {{ end }}
+  {{ else if eq . "admin" }}
+    Lorenzo Maria Casale
+  {{ else }}
+    {{ . }}
+  {{ end }}
+{{ end }}
