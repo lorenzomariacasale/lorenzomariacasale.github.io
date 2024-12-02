@@ -15,11 +15,15 @@ sections:
       username: admin
       text: ""
       # Show a call-to-action button under your biography? (optional)
-      html: |
-        <div class="button-container">
-          <a href="uploads/resume.pdf" class="btn">Download CV</a>
-          <a href="uploads/resume.pdf" class="btn">Download CV</a>
-        </div>
+  - block: buttons
+    content:
+      buttons:
+        - title: Read my latest paper on LLMs
+          icon: brands/arxiv
+          url: https://arxiv.org/abs/2304.01852
+        - title: Watch my new YouTube video to achieve 20x productivity
+          icon: brands/youtube
+          url: https://youtube.com
     design:
       css_class: dark
       background:
