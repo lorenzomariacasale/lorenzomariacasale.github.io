@@ -9,12 +9,6 @@ design:
   spacing: "6rem"
 
 sections:
-  - block: resume-biography-3
-    content:
-      # Choose a user profile to display (a folder name within `content/authors/`)
-      username: admin
-      text: ""
-      # Show a call-to-action button under your biography? (optional)
   - block: buttons
     content:
       buttons:
@@ -24,6 +18,18 @@ sections:
         - title: Watch my new YouTube video to achieve 20x productivity
           icon: brands/youtube
           url: https://youtube.com
+        - title: Connect with me on LinkedIn
+          icon: brands/linkedin
+          url: https://linkedin.com
+  - block: resume-biography-3
+    content:
+      # Choose a user profile to display (a folder name within `content/authors/`)
+      username: admin
+      text: ""
+      # Show a call-to-action button under your biography? (optional)
+      button:
+        text: Download CV
+        url: uploads/resume.pdf
     design:
       css_class: dark
       background:
