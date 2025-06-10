@@ -25,8 +25,8 @@ author:
   avatar           : "avatar.jpg"
   name             : "Lorenzo Maria Casale"
   pronouns         : # example: "she/her"  
-  bio              : "PhD Candidate in Economics at University of Zurich"
-  location         : "Zurich"
+  bio              : "PhD Candidate in Economics"
+  location         : ""
   employer         : "University of Zurich"
   uri              : # URL
   email            : "none@example.org" 
