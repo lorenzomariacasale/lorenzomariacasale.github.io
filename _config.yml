@@ -22,14 +22,14 @@ repository               : "lorenzomariacasale/lorenzomariacasale.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "avatar.jpg"
+  avatar           : "avatar_720x720.jpg"
   name             : "Lorenzo Maria Casale"
   pronouns         : # example: "she/her"  
   bio              : "PhD Candidate in Economics"
-  location         : ""
+  location         : # Place
   employer         : "University of Zurich"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "lorenzo.casale@econ.uzh.ch" 
 
   # Academic websites
   academia         : # URL
