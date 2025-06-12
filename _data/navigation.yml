@@ -31,3 +31,18 @@ main:
     
   - title: "Guide"
     url: /markdown/
+
+
+#main:
+#  - title: "Research"
+#    url: /research/
+#
+#  - title: "Teaching"
+#    url: /teaching/    
+#
+#  - title: "CV"
+#    url: /cv/
+#
+#  - title: "News"
+#    url: /news/
+
