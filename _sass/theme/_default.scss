@@ -18,8 +18,8 @@ $warning-color              : #f89406;
 
 /* Other basic settings for the template */
 $border-radius              : 4px;
-$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
-$global-transition          : all 0.2s ease-in-out;
+$box-shadow                 : 0 2px 8px rgba(0, 0, 0, 0.1);
+$global-transition          : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 $masthead-height            : 70px;
 $navicon-width              : 28px;
 $navicon-height             : 4px;
@@ -28,20 +28,36 @@ $sidebar-screen-min-width   : 1024px;
 
 /* Default light theme for the site */
 :root {
-    --global-base-color                 : #f4f2a7;
-    --global-bg-color                   : #fffef7;
-    --global-footer-bg-color            : #fef9c3;
-    --global-border-color               : #e6e3a1;
-    --global-dark-border-color          : #d4d19a;
-    --global-code-background-color      : #fefcf0;
-    --global-code-text-color            : #5a5a5a;
-    --global-fig-caption-color          : #8b8b8b;
-    --global-link-color                 : #b8860b;
-    --global-link-color-hover           : #9a7209;
-    --global-link-color-visited         : #cd853f;  
-    --global-masthead-link-color        : #6b6b6b;
-    --global-masthead-link-color-hover  : #4a4a4a;    
-    --global-text-color                 : #4a4a4a;
-    --global-text-color-light           : #7a7a7a;
-    --global-thead-color                : #f0ed9e;
+    --global-base-color                 : #f0f8f8;
+    --global-bg-color                   : #ffffff;
+    --global-footer-bg-color            : #e8f2f2;
+    --global-border-color               : #c7d9d9;
+    --global-dark-border-color          : #b0c7c7;
+    --global-code-background-color      : #f5f9f9;
+    --global-code-text-color            : #2d4d4d;
+    --global-fig-caption-color          : #4a7070;
+    --global-link-color                 : #2b9999;
+    --global-link-color-hover           : #1f7575;
+    --global-link-color-visited         : #3d8585;
+    --global-masthead-link-color        : #2d4d4d;
+    --global-masthead-link-color-hover  : #2b9999;
+    --global-text-color                 : #2d4d4d;
+    --global-text-color-light           : #4a7070;
+    --global-thead-color                : #f5f9f9;
+    
+    /* Enhanced masthead/header styling */
+    --global-masthead-bg-color          : #e8f2f2;
+    --global-masthead-border-color      : #b0c7c7;
+    --global-masthead-shadow            : 0 2px 12px rgba(0, 0, 0, 0.08);
+    
+    /* Enhanced transitions */
+    --transition-fast                   : all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal                 : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow                   : all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Teal-based accent colors */
+    --accent-teal-light                 : #66d9d9;
+    --accent-teal-medium                : #4dd0d0;
+    --accent-teal-dark                  : #33b8b8;
+    --accent-teal-darker                : #1a9999;
 }
