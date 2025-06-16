@@ -1,6 +1,6 @@
 ---
 title: "Paper Title Number 3"
-collection: publications
+collection: research
 category: wp
 permalink: /publication/2015-10-01-paper-title-number-3
 excerpt: 'Joint work with <a href="https://sites.google.com/nyu.edu/lucavitale/">Co-Author Name</a>. This paper is about the number 3. The number 4 is left for future work.'
