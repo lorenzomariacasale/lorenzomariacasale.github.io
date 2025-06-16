@@ -41,24 +41,3 @@
     "vendor/font-awesome/brands",
     "vendor/magnific-popup/magnific-popup"
 ;
-
-// Responsive homepage fix - REPLACE ALL PREVIOUS CODE WITH THIS
-#main {
-  max-width: 100% !important;
-  
-  @media (min-width: 768px) {
-    max-width: 90% !important;
-  }
-  
-  @media (min-width: 1200px) {
-    max-width: 1200px !important;
-  }
-}
-
-.page {
-  @media (min-width: 1024px) {
-    @include span(10 of 12 last);
-    @include prefix(0.5 of 12);
-    @include suffix(2 of 12);
-  }
-}
