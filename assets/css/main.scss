@@ -42,7 +42,7 @@
     "vendor/magnific-popup/magnific-popup"
 ;
 
-// Responsive homepage fix
+// Responsive homepage fix - REPLACE the previous code with this
 #main {
   max-width: 100% !important;
   
@@ -55,42 +55,11 @@
   }
 }
 
+// Keep the original page layout but just adjust the container
 .page {
-  width: 100% !important;
-  margin: 0 !important;
-  
   @media (min-width: 1024px) {
-    width: 100% !important;
-    margin: 0 !important;
-  }
-}
-
-// Fix sidebar layout after responsive changes
-.author__avatar {
-  @media (min-width: 1024px) {
-    margin-bottom: 1rem;
-  }
-}
-
-.sidebar {
-  @media (min-width: 1024px) {
-    width: 25% !important;
-    float: left !important;
-    margin-right: 3% !important;
-  }
-}
-
-.page__content {
-  @media (min-width: 1024px) {
-    width: 72% !important;
-    float: right !important;
-  }
-}
-
-@media (min-width: 1024px) {
-  .page__inner-wrap::after {
-    content: "";
-    display: table;
-    clear: both;
+    @include span(10 of 12 last);
+    @include prefix(0.5 of 12);
+    @include suffix(2 of 12);
   }
 }
