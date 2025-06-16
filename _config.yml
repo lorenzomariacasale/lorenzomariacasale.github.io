@@ -78,11 +78,11 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  books:
+  pub:
     title: 'Publications'
-  manuscripts:
+  wp:
     title: 'Working Papers'
-  conferences:
+  wip:
     title: 'Work in Progress'
 
 
