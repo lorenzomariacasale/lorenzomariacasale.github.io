@@ -41,3 +41,29 @@
     "vendor/font-awesome/brands",
     "vendor/magnific-popup/magnific-popup"
 ;
+
+// Fix navigation alignment
+.greedy-nav {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.greedy-nav .visible-links {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.greedy-nav .dark-toggle {
+  margin-left: auto !important;
+  order: 999 !important;
+}
+
+// Align Research link with homepage text
+.greedy-nav .visible-links li {
+  margin-right: 1.5rem;
+}
+
+.greedy-nav .visible-links li:last-child {
+  margin-right: 0;
+}
