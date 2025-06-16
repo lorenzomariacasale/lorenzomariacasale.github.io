@@ -41,3 +41,26 @@
     "vendor/font-awesome/brands",
     "vendor/magnific-popup/magnific-popup"
 ;
+
+// Responsive homepage fix
+#main {
+  max-width: 100% !important;
+  
+  @media (min-width: 768px) {
+    max-width: 90% !important;
+  }
+  
+  @media (min-width: 1200px) {
+    max-width: 1200px !important;
+  }
+}
+
+.page {
+  width: 100% !important;
+  margin: 0 !important;
+  
+  @media (min-width: 1024px) {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
