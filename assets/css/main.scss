@@ -42,14 +42,14 @@
     "vendor/magnific-popup/magnific-popup"
 ;
 
-// Perfect navigation alignment
+// Fix navigation alignment - precise version
 .greedy-nav .visible-links {
-  margin-left: -4rem !important; // Move Research to align with main text
+  margin-left: -1.5rem !important; // Less aggressive left movement
 }
 
 .greedy-nav .dark-toggle {
   position: absolute !important;
-  right: 0 !important; // Push to very right edge
+  right: 10rem !important; // Give it a tiny margin from edge
   top: 50% !important;
   transform: translateY(-50%) !important;
   margin: 0 !important;
@@ -57,5 +57,5 @@
 
 .greedy-nav {
   position: relative !important;
-  padding-right: 3rem !important; // Give space for the dark toggle
+  padding-right: 3rem !important;
 }
