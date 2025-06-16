@@ -42,26 +42,20 @@
     "vendor/magnific-popup/magnific-popup"
 ;
 
-// Precise navigation alignment fix
-.masthead {
-  .greedy-nav {
-    display: flex !important;
-    align-items: center !important;
-    width: 100% !important;
-  }
-  
-  .greedy-nav .visible-links {
-    margin-left: -1rem !important; // Move Research slightly left
-  }
-  
-  .greedy-nav .dark-toggle {
-    position: absolute !important;
-    right: 0 !important; // All the way right
-    margin-left: 0 !important;
-  }
+// Perfect navigation alignment
+.greedy-nav .visible-links {
+  margin-left: -4rem !important; // Move Research to align with main text
 }
 
-// Ensure the dark toggle doesn't affect other layout
-.greedy-nav .visible-links {
-  margin-right: 3rem !important; // Give space for the dark toggle
+.greedy-nav .dark-toggle {
+  position: absolute !important;
+  right: 0 !important; // Push to very right edge
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  margin: 0 !important;
+}
+
+.greedy-nav {
+  position: relative !important;
+  padding-right: 3rem !important; // Give space for the dark toggle
 }
