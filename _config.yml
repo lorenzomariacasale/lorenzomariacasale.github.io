@@ -22,7 +22,7 @@ repository               : "lorenzomariacasale/lorenzomariacasale.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "avatar_squared.jpg"
+  avatar           : "avatar.jpg"
   name             : "Lorenzo Maria Casale"
   pronouns         : # example: "she/her"  
   bio              : "PhD Candidate in Economics"
