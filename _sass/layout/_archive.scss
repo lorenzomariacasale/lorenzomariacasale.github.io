@@ -245,11 +245,8 @@
 }
 
 .archive__item-title--static {
-  text-decoration: none;
-  cursor: default;
-  color: inherit;
-  font-weight: inherit;
-  font-size: inherit;
+  all: unset;
+  font-weight: bold;
   display: inline;
 }
 
