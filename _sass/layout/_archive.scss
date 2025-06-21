@@ -243,3 +243,12 @@
     }
   }
 }
+
+.archive__item-title--static {
+  text-decoration: none;
+  cursor: default;
+  color: inherit;
+  font-weight: bold;
+  font-size: 1.25em;
+  display: inline-block;
+}
