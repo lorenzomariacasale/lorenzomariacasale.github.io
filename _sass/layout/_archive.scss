@@ -245,11 +245,15 @@
 }
 
 .archive__item-title--static {
-  text-decoration: none;
-  cursor: none;  // ← yes, it works, but use cautiously
-  color: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  display: inline;
+  all: unset;                  // removes all styles, including from parents
+  font-size: inherit;          // inherits the heading size
+  font-weight: bold;           // looks like other titles
+  line-height: inherit;
+  display: inline-block;
+  cursor: text !important;     // forces text-cursor (or use 'default' if you prefer)
+  text-decoration: none !important;
+  color: inherit !important;   // disables any link coloring
+  pointer-events: none;        // blocks any accidental hover effects or JS
 }
+
 
