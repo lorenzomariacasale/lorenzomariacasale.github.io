@@ -245,8 +245,11 @@
 }
 
 .archive__item-title--static {
-  all: unset;
-  font-weight: bold;
+  text-decoration: none;
+  cursor: none;  // ← yes, it works, but use cautiously
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
   display: inline;
 }
 
