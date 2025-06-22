@@ -4,6 +4,8 @@ type: "Master Level"
 venue: "University of Zurich"
 date: 2024-01-01
 teaching_desc: "Instructor: Prof. Hans-Joachim Voth"
+norender: true
+
 syllabi:
   - label: "Spring & Fall Semester, 2024"
     url: "/files/syllabus_fc_2024.pdf"
