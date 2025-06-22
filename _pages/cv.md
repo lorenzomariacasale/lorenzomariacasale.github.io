@@ -5,10 +5,9 @@ layout: single
 author_profile: true
 ---
 
-You can download my full CV below:
+Here's my CV:
 
-👉 [Download CV (PDF)](/files/CV.pdf)
+[Download CV](/files/CV.pdf)
 
-<p style="text-align: right; font-style: italic; font-size: 0.9em; margin-top: 1rem;">
-  Last updated: June 2025
-</p>
+_Last updated: June 2025_
+
