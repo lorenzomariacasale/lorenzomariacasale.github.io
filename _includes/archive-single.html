@@ -54,7 +54,17 @@
     {% elsif post.excerpt and site.read_more == 'enabled' %}
     <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
     {% endif %}
-    
+
+    {% if post.abstract %}
+      <p>
+        <a href="#" class="toggle-abstract" onclick="toggleAbstract(this); return false;">[ + Abstract ]</a>
+      </p>
+      <div class="abstract-text" style="display: none;">
+        <p>{{ post.abstract }}</p>
+      </div>
+    {% endif %}
+
+
     {% if post.paperurl or post.slidesurl or post.bibtexurl or post.twitterurl %}
       <p>
         {% if post.paperurl %}
@@ -77,3 +87,12 @@
 
   </article>
 </div>
+
+<script>
+  function toggleAbstract(el) {
+    const abstract = el.parentElement.nextElementSibling;
+    const isVisible = abstract.style.display === "block";
+    abstract.style.display = isVisible ? "none" : "block";
+    el.textContent = isVisible ? "[ + Abstract ]" : "[ – Abstract ]";
+  }
+</script>
