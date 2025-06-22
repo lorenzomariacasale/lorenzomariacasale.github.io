@@ -66,7 +66,7 @@
 
     {% if post.teaching_desc %}
       <p>
-        <a href="#" class="toggle-teaching-desc" onclick="toggleTeachingDesc(this); return false;">[ + Task Description & Topics Analyzed ]</a>
+        <a href="#" class="toggle-teaching-desc" onclick="toggleTeachingDesc(this); return false;">▶ Task Description & Topics Analyzed</a>
       </p>
       <div class="teaching-desc-text" style="display: none;">
         <p>{{ post.teaching_desc }}</p>
@@ -118,5 +118,15 @@
     const isVisible = abstract.style.display === "block";
     abstract.style.display = isVisible ? "none" : "block";
     el.textContent = isVisible ? "▶ Abstract" : "▼ Abstract";
+  }
+</script>
+
+
+<script>
+  function toggleTeachingDesc(el) {
+    const desc = el.parentElement.nextElementSibling;
+    const isVisible = desc.style.display === "block";
+    desc.style.display = isVisible ? "none" : "block";
+    el.textContent = isVisible ? "▶ Task Description & Topics Analyzed" : "▼ Task Description & Topics Analyzed";
   }
 </script>
