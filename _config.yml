@@ -28,7 +28,7 @@ author:
   bio              : "PhD Candidate in Economics"
   location         : # Place
   employer         : "University of Zurich"
-  uri              : # URL
+  uri              : "https://www.econ.uzh.ch/en.html"
   email            : "lorenzo.casale@econ.uzh.ch" 
 
   # Academic websites
@@ -60,7 +60,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "lorenzo-maria-casale-44331216a/"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
