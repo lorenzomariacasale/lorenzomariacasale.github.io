@@ -1,18 +1,15 @@
 ---
-title: "Quantitative Policy Tools"
-collection: teaching
-norender: true
-
+title: "Econometrics for Research Students Part II"
+type: "PhD Level"
+venue: "University of Zurich"
+excerpt: 'Instructor: Prof. <a href="https://www.econ.uzh.ch/en/people/faculty/winkelmann.html">Rainer Winkelmann'
 teaching_desc: >
   This course covers causal inference and communication of results using R...
 
 syllabi:
-  - label: "Spring Semester 2024"
-    url: "/files/syllabus_qpt_spring2024.pdf"
-  - label: "Fall Semester 2024"
-    url: "/files/syllabus_qpt_fall2024.pdf"
-
+  - label: "Spring Semester, 2025"
+    url: "/files/syllabus_phd_2025.pdf"
 evaluations:
-  - label: "Spring Semester 2024"
-    url: "/files/eval_qpt_spring2024.pdf"
+  - label: "SS2024"
+    url: "/files/evaluation_phd_ss2024.pdf"
 ---
