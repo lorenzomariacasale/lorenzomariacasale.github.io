@@ -25,15 +25,16 @@
     <ul class="author__urls social-icons">
       <!-- Font Awesome icons / Biographic information  -->
       {% if author.employer %}
-        <li class="author__desktop" style="display: flex; align-items: center; gap: 0; padding-left: 0;">
-          <i class="fas fa-building-columns icon-pad-right" aria-hidden="true" style="margin: 0;"></i>
+        <li class="author__desktop" style="display: flex; align-items: center;">
+          <i class="fas fa-building-columns icon-pad-right" aria-hidden="true" style="margin-right: 4px;"></i>
           {% if author.uri %}
-            <a href="{{ author.uri }}" style="margin: 0; padding: 0; white-space: nowrap;">{{ author.employer }}</a>
+            <a href="{{ author.uri }}" style="display: inline; margin: 0; padding: 0;">{{ author.employer }}</a>
           {% else %}
-            <span style="white-space: nowrap;">{{ author.employer }}</span>
+            <span style="display: inline;">{{ author.employer }}</span>
           {% endif %}
         </li>
       {% endif %}
+
       {% if author.email %}
         <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
       {% endif %}
