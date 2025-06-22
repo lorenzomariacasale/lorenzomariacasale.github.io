@@ -1,20 +1,18 @@
 ---
-title: "Teaching experience 1"
+title: "Quantitative Policy Tools"
 collection: teaching
-type: "Undergraduate course"
-permalink: /teaching/2014-spring-teaching-1
-venue: "University 1, Department"
-date: 2014-01-01
-location: "City, Country"
+norender: true
+
+teaching_desc: >
+  This course covers causal inference and communication of results using R...
+
+syllabi:
+  - label: "Spring Semester 2024"
+    url: "/files/syllabus_qpt_spring2024.pdf"
+  - label: "Fall Semester 2024"
+    url: "/files/syllabus_qpt_fall2024.pdf"
+
+evaluations:
+  - label: "Spring Semester 2024"
+    url: "/files/eval_qpt_spring2024.pdf"
 ---
-
-This is a description of a teaching experience. You can use markdown like any other post.
-
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======

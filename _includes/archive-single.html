@@ -64,6 +64,30 @@
       </div>
     {% endif %}
 
+    {% if post.teaching_desc %}
+      <p>
+        <a href="#" class="toggle-teaching-desc" onclick="toggleTeachingDesc(this); return false;">[ + Task Description & Topics Analyzed ]</a>
+      </p>
+      <div class="teaching-desc-text" style="display: none;">
+        <p>{{ post.teaching_desc }}</p>
+      </div>
+    {% endif %}
+
+    {% if post.syllabi %}
+      <p><strong>Syllabus:</strong>
+        {% for s in post.syllabi %}
+          <a href="{{ s.url }}">{{ s.label }}</a>{% unless forloop.last %} | {% endunless %}
+        {% endfor %}
+      </p>
+    {% endif %}
+
+    {% if post.evaluations %}
+      <p><strong>Evaluations:</strong>
+        {% for e in post.evaluations %}
+          <a href="{{ e.url }}">{{ e.label }}</a>{% unless forloop.last %} | {% endunless %}
+        {% endfor %}
+      </p>
+    {% endif %}
 
     {% if post.paperurl or post.slidesurl or post.bibtexurl or post.twitterurl %}
       <p>
