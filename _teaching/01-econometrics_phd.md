@@ -8,8 +8,8 @@ teaching_desc: >
 norender: true
 syllabi:
   - label: "Spring Semester, 2025"
-    url: "/files/syllabus_phd_2025.pdf"
+    url: "/files/evl_mtrcs_phd_fs2025.pdf"
 evaluations:
-  - label: "SS2024"
-    url: "/files/evaluation_phd_ss2024.pdf"
+  - label: "Spring Semester, 2025"
+    url: "/files/evl_mtrcs_phd_ss2025.pdf"
 ---
