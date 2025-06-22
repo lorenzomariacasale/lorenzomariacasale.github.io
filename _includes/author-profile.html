@@ -31,7 +31,7 @@
         <li class="author__desktop">
           <i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>
           {% if author.uri %}
-            <a href="{{ author.uri }}" style="vertical-align: middle; margin-left: 0;">{{ author.employer }}</a>
+            <a href="{{ author.uri }}" style="display:inline; margin-left: 0;">{{ author.employer }}</a>
           {% else %}
             {{ author.employer }}
           {% endif %}
