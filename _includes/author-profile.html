@@ -26,14 +26,12 @@
       <!-- Font Awesome icons / Biographic information  -->
       {% if author.employer %}
         <li class="author__desktop">
-          <span style="display: inline-flex; align-items: center; gap: 0.25rem;">
-            <i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>
-            {% if author.uri %}
-              <a href="{{ author.uri }}" style="margin: 0; padding: 0;">{{ author.employer }}</a>
-            {% else %}
-              {{ author.employer }}
-            {% endif %}
-          </span>
+          <i class="fas fa-building-columns icon-pad-right" aria-hidden="true" style="margin-right: 0.25rem;"></i>
+          {% if author.uri %}
+            <a href="{{ author.uri }}" style="margin: 0; padding: 0;">{{ author.employer }}</a>
+          {% else %}
+            {{ author.employer }}
+          {% endif %}
         </li>
       {% endif %}
       {% if author.email %}
