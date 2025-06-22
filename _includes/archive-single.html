@@ -93,6 +93,6 @@
     const abstract = el.parentElement.nextElementSibling;
     const isVisible = abstract.style.display === "block";
     abstract.style.display = isVisible ? "none" : "block";
-    el.textContent = isVisible ? "[ + Abstract ]" : "[ – Abstract ]";
+    el.textContent = isVisible ? "▶ Abstract" : "▼ Abstract";
   }
 </script>
