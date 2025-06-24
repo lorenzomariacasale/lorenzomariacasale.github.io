@@ -3,6 +3,7 @@ title: "Econometrics for Research Students Part II"
 type: "PhD Level"
 venue: "University of Zurich"
 excerpt: 'Instructor: Prof. <a href="https://www.econ.uzh.ch/en/people/faculty/winkelmann.html">Rainer Winkelmann'
+order: 1  
 teaching_desc: >
   This course covers causal inference and communication of results using R...
 norender: true

@@ -3,6 +3,7 @@ title: "Econometrics for Policy Analysts"
 type: "Master Level"
 venue: "University of Zurich"
 excerpt: 'Instructor: Prof. <a href="https://yanagizawadrott.com/">David Yanagizawa‑Drott</a>'
+order: 2
 teaching_desc: >
   This course develops econometric tools for policy analysis with applications in development and political economy...
 norender: true

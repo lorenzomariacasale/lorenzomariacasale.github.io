@@ -3,6 +3,7 @@ title: "Financial Crises: Past, Present, Future"
 type: "Master Level"
 venue: "University of Zurich"
 excerpt: 'Instructor: Prof. <a href="https://www.jvoth.com/">Hans‑Joachim Voth</a>'
+order: 3
 teaching_desc: >
   This course explores major financial crises in historical and theoretical perspective...
 norender: true
