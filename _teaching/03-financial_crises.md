@@ -10,7 +10,7 @@ syllabi:
   - label: "Spring Semester, 2024"
     url: "/files/syl_fin_crisis_ss2024.pdf"
   - label: "Fall Semester, 2024"
-    url: "/files/syl_fin_crisis_ds2024.pdf"
+    url: "/files/syl_fin_crisis_fs2024.pdf"
 evaluations:
   - label: "Spring Semester, 2024"
     url: "/files/evl_fin_crisis_ss2024.pdf"
