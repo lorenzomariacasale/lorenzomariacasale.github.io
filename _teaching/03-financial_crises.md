@@ -5,7 +5,13 @@ venue: "University of Zurich"
 excerpt: 'Instructor: Prof. <a href="https://www.jvoth.com/">Hans‑Joachim Voth</a>'
 order: 3
 teaching_desc: >
-  This course explores major financial crises in historical and theoretical perspective...
+  I supported this Master's-level course through detailed problem set correction and exam grading across multiple semesters.
+  <br><br>
+  <strong>Core Topics of the TA Sessions:</strong><br>
+  • Theoretical foundations of banking panics and bank runs<br>
+  • Credit booms and asset bubbles<br>
+  • Sovereign debt crises: enforcement problems and historical case studies<br>
+  • International lending: syndicated debt, default risk, and cross-border externalities
 norender: true
 syllabi:
   - label: "Spring Semester, 2024"
