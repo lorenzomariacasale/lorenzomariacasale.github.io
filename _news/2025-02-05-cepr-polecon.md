@@ -1,6 +1,6 @@
 ---
 title: 'Warwick/UPF/Northwestern/CEPR Political Economy Symposium'
-date: 2025-06-10
+date: 2025-02-05
 #permalink: /news/2012/08/blog-post-1/
 norender: true
 ---
