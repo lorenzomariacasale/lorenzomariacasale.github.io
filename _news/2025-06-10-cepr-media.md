@@ -1,6 +1,6 @@
 ---
 title: '3rd CEPR Workshop on Media, Technology, Politics, and Society'
-date: 2012-08-14
+date: 2025-06-10
 #permalink: /news/2012/08/blog-post-1/
 norender: true
 ---
