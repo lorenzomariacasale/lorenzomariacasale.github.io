@@ -5,7 +5,7 @@ date: 2025-02-27
 norender: true
 ---
 
-I'm excited to share that the paper I am jointly writing with Luca Vitale, <em>"Family Mayors: Undermined Accountability in Italian Municipalities"</em>, has been accepted for presentation at the <a href="/files/cepr_bocconi.pdf">20th Doctorissimes Conference</a>, hosted by the Paris School of Economics on April 10–11, 2025.
+I'm excited to share that the paper I am jointly writing with Luca Vitale, <em>"Large-Family Mayors: Undermined Accountability in Italian Municipalities"</em>, has been accepted for presentation at the <a href="/files/cepr_bocconi.pdf">20th Doctorissimes Conference</a>, hosted by the Paris School of Economics on April 10–11, 2025.
 
 <p>
   <a href="#" class="toggle-postconf" onclick="togglePostConf(this); return false;">▶ Post-Conference Update</a>
