@@ -75,6 +75,15 @@
       </div>
     {% endif %}
 
+    {% if post.postconf %}
+      <p>
+        <a href="#" class="toggle-postconf" onclick="togglePostConf(this); return false;">▶ Post-Conference Update</a>
+      </p>
+      <div class="postconf-text" style="display: none;">
+        {{ post.postconf_text | markdownify }}
+      </div>
+    {% endif %}
+
     {% if post.syllabi %}
       <p><strong>Syllabus:</strong>
         {% for s in post.syllabi %}
@@ -130,5 +139,14 @@
     const isVisible = desc.style.display === "block";
     desc.style.display = isVisible ? "none" : "block";
     el.textContent = isVisible ? "▶ Task Description & Topics Analyzed" : "▼ Task Description & Topics Analyzed";
+  }
+</script>
+
+<script>
+  function togglePostConf(el) {
+    const section = el.parentElement.nextElementSibling;
+    const isVisible = section.style.display === "block";
+    section.style.display = isVisible ? "none" : "block";
+    el.textContent = isVisible ? "▶ Post-Conference Update" : "▼ Post-Conference Update";
   }
 </script>
