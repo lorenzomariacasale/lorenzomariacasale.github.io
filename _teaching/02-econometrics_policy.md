@@ -17,8 +17,7 @@ teaching_desc: >
   <br><br>
   In addition to the main course, I also served as TA for the associated seminar in Spring 2024, 
   Fall 2024, and (upcoming) Fall 2025. The syllabus for Fall 2024 is available 
-  <a href="/files/syl_epa_sem_fs2024.pdf">here</a>; evaluations are not available, as the seminar 
-  is not formally graded.
+  <a href="/files/syl_epa_sem_fs2024.pdf">here</a>. Evaluations are, unfortunately, not available, as the class is formally not a course.
 norender: true
 syllabi:
   - label: "Spring Semester, 2024"

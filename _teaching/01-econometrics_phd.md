@@ -12,7 +12,7 @@ teaching_desc: >
   • Causal inference, treatment effects, matching, selection models<br>
   • Likelihood-based & panel data models: Poisson, pseudo-MLE, fixed and random effects<br>
   • Research credibility: power analysis, meta-studies, publication bias
-
+  <br><br>
   A more complete list of the topics covered is in the syllabus.
 norender: true
 syllabi:
