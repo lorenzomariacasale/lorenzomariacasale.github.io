@@ -18,9 +18,9 @@ I'm excited to share that the paper I am jointly writing with Luca Vitale, <em>"
     We're especially grateful to <a href="https://philinew.github.io/">Philine Widmer</a> for her thoughtful and engaging discussion of my paper.
   </p>
   <p>
-    <strong>Conference Program:</strong> <a href="/files/doctorissimes_program.pdf">Download PDF</a>
+    <strong>Conference Program:</strong> <a href="/files/doctorissimes.pdf">Download PDF</a>
   </p>
-  <img src="/files/discussion_photo.jpg" alt="Presenting at Doctorissimes Conference" style="max-width: 100%; border-radius: 8px; margin-top: 1rem;">
+  <img src="/files/doctorissimes_photo.jpg" alt="Presenting at Doctorissimes Conference" style="max-width: 100%; border-radius: 8px; margin-top: 1rem;">
 </div>
 
 <script>
