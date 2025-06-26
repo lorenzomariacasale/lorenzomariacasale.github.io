@@ -2,7 +2,8 @@
    jQuery plugin settings and other scripts
    ========================================================================== */
 
-$(document).ready(function () {
+// Wait for jQuery to load, then wait for DOM ready
+jQuery(document).ready(function($) {
   // Detect user's system preference
   const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   
@@ -165,4 +166,4 @@ $(document).ready(function () {
     closeOnContentClick: true,
     midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
   });
-});
+}); // End of jQuery document ready wrapper
