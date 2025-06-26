@@ -6,6 +6,16 @@ $(document).ready(function () {
   // Detect user's system preference
   const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   
+  // Clean up any invalid localStorage values
+  var cleanupThemeStorage = function() {
+    const savedTheme = localStorage.getItem("theme");
+    // If saved theme is not a valid value, remove it
+    if (savedTheme && savedTheme !== "dark" && savedTheme !== "light") {
+      console.log("Removing invalid theme preference:", savedTheme);
+      localStorage.removeItem("theme");
+    }
+  };
+  
   // Function to update theme UI (icon and tooltip)
   var updateThemeUI = function(theme) {
     if (theme === "dark") {
@@ -40,6 +50,7 @@ $(document).ready(function () {
 
   // Initialize theme on page load
   var initializeTheme = function() {
+    cleanupThemeStorage(); // Clean up any invalid saved preferences
     const currentTheme = getCurrentTheme();
     applyTheme(currentTheme);
     console.log("Initialized theme:", currentTheme, "System prefers dark:", systemPrefersDark);
