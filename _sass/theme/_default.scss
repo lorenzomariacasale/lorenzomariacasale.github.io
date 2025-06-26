@@ -16,9 +16,9 @@ $cream-accent               : #edeae3;    // Darker cream for subtle accents
 $light-blue-tint            : #f0f6fd;    // Very subtle blue tint for variety
 $navy-text                  : #1a2332;    // Navy for main text (matches dark theme)
 $navy-secondary             : #34455c;    // Lighter navy for secondary text
-$blue-links                 : #2c7cd1;    // Blue for links (darker than dark theme)
-$blue-hover                 : #1a5490;    // Darker blue for hover
-$blue-visited               : #4a63a0;    // Purple-blue for visited links
+$blue-links                 : #6b8caf;    // Dusty blue for links
+$blue-hover                 : #5a7a9c;    // Darker dusty blue for hover
+$blue-visited               : #7a95b8;    // Lighter dusty blue for visited links
 
 /* Color codes used for the site */
 $danger-color               : #dc3545;
@@ -66,11 +66,11 @@ $sidebar-screen-min-width   : 1024px;
     --transition-normal                 : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow                   : all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     
-    /* Blue-based accent colors */
-    --accent-blue-light                 : #70b3ff;
+    /* Dusty blue-based accent colors */
+    --accent-blue-light                 : #a3b8d0;
     --accent-blue-medium                : #{$blue-links};
     --accent-blue-dark                  : #{$blue-hover};
-    --accent-blue-darker                : #0d3a66;
+    --accent-blue-darker                : #4a6b89;
     
     /* Cream background variants */
     --cream-lightest                    : #{$cream-bg};

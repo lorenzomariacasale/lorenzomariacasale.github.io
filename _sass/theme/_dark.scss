@@ -15,9 +15,9 @@ $navy-medium                : #242b36;    // Medium navy (borders and accents)
 $navy-light                 : #324050;    // Lighter navy for subtle elements
 $cream-text                 : #f8f5f0;    // Warm cream-white for text (complements light theme bg)
 $cream-secondary            : #e8e0d8;    // Muted cream for secondary text
-$blue-warm                  : #5ba3ff;    // Warm blue for links (slightly warmer than pure blue)
-$blue-light                 : #7db8ff;    // Light warm blue for hover
-$blue-pale                  : #a8ccff;    // Pale warm blue for visited links
+$blue-warm                  : #8ba5c7;    // Dusty blue for links (lighter for dark theme)
+$blue-light                 : #a3b8d0;    // Light dusty blue for hover
+$blue-pale                  : #b8c9db;    // Pale dusty blue for visited links
 
 /* Color codes used for the site */
 $danger-color               : #ff6b6b;
@@ -65,11 +65,11 @@ html[data-theme="dark"] {
     --transition-normal                 : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow                   : all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     
-    /* Warm blue-based accent colors */
+    /* Dusty blue-based accent colors */
     --accent-blue-light                 : #{$blue-light};
     --accent-blue-medium                : #{$blue-warm};
-    --accent-blue-dark                  : #3d85d9;
-    --accent-blue-darker                : #265394;
+    --accent-blue-dark                  : #6b8caf;
+    --accent-blue-darker                : #4a6b89;
     
     /* Warm navy-based background variants */
     --navy-darkest                      : #{$navy-darkest};
