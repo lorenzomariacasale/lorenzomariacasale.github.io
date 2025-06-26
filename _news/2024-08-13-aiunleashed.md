@@ -9,4 +9,4 @@ postconf_text: >
   Special thanks to all the professors who took the time to provide thoughtful feedback ahead of the presentation, and to my co-authors for giving me this opportunity.
 ---
 
-I’m pleased to share that I will be presenting <em>"Cultural Expression and Style Preferences"</em> at the Forum for Economic Dialogue: AI Unleashed – Economic Realities Beyond the Hype, hosted by the <a href="https://www.ubscenter.uzh.ch/">UBS Center for Economics in Society</a> at the Careum Auditorium in Zurich on October 31, 2024.
+I’m pleased to share that I will be presenting <em>"Cultural Expression and Style Preferences"</em> at the Forum for Economic Dialogue: <a href= "https://www.ubscenter.uzh.ch/en/news_events/events/2024-10-31_forum_economic_dialogue_artificial_intelligence.html">AI Unleashed – Economic Realities Beyond the Hype</a>, hosted by the <a href="https://www.ubscenter.uzh.ch/">UBS Center for Economics in Society</a> at the Careum Auditorium in Zurich on October 31, 2024.

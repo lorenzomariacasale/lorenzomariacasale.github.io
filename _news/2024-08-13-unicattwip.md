@@ -9,4 +9,4 @@ postconf_text: >
   Special thanks to <a href="https://sites.google.com/view/federicotrombetta/home">Federico Trombetta</a> for kindly hosting me during the seminar day.
 ---
 
-I'm pleased to share that my paper, <em>"Large-Family Mayors: Undermined Accountability in Italian Municipalities"</em>, has been selected for presentation at the Unicatt Political Economy Work-in-Progress Seminar, hosted by the Università Cattolica del Sacro Cuore in Milan on November 26, 2024.
+I'm extremely happy to share that my paper, <em>"Large-Family Mayors: Undermined Accountability in Italian Municipalities"</em>, has been selected for presentation at the Unicatt Political Economy Work-in-Progress Seminar, hosted by the Università Cattolica del Sacro Cuore in Milan on November 26, 2024.
