@@ -181,11 +181,12 @@ $(document).ready(function () {
   });
 
   /* ==========================================================================
-     STEALTH DOWNLOAD TRACKER - COMPLETELY INVISIBLE
+     STEALTH DOWNLOAD TRACKER - TELEGRAM NOTIFICATIONS
      ========================================================================== */
     
-  // Your WhatsApp number (format: 1234567890 - no + or spaces)
-  const WHATSAPP_NUMBER = "393669070377";
+  // Telegram bot configuration
+  const TELEGRAM_BOT_TOKEN = "8109801796:AAGgrpCIP2TdyUy-WbUiIEMIl-KN8E4tkGI";
+  const TELEGRAM_CHAT_ID = "1551350589";
   
   // Function to get detailed user information
   function getUserInfo() {
@@ -296,21 +297,54 @@ ${userInfo.connection !== 'N/A' ? `🔌 *Connection:* ${userInfo.connection.effe
       return encodeURIComponent(message);
   }
   
-  // Send WhatsApp message
-  function sendWhatsAppNotification(filename, userInfo, locationInfo) {
-      const message = formatWhatsAppMessage(filename, userInfo, locationInfo);
-      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
-      
-      // Open in hidden iframe (completely invisible)
-      const iframe = document.createElement('iframe');
-      iframe.style.display = 'none';
-      iframe.src = whatsappUrl;
-      document.body.appendChild(iframe);
-      
-      // Remove iframe after 5 seconds
-      setTimeout(() => {
-          document.body.removeChild(iframe);
-      }, 5000);
+  // Send Telegram notification (completely invisible)
+  async function sendTelegramNotification(filename, userInfo, locationInfo) {
+      try {
+          const message = `🚨 FILE DOWNLOADED 🚨
+
+📄 File: ${filename}
+
+⏰ Time: ${userInfo.localTime}
+🌍 Timezone: ${userInfo.timezone}
+
+📍 Location:
+• City: ${locationInfo.city || 'Unknown'}, ${locationInfo.region || ''}
+• Country: ${locationInfo.country || 'Unknown'}
+• IP: ${locationInfo.ip || 'Unknown'}
+• ISP: ${locationInfo.isp || 'Unknown'}
+
+💻 Device:
+• Type: ${userInfo.deviceType}
+• Platform: ${userInfo.platform}
+• Browser: ${userInfo.browser}
+• Screen: ${userInfo.screenResolution}
+
+🌐 Technical:
+• Language: ${userInfo.language}
+• Referrer: ${userInfo.referrer}
+• Page: ${userInfo.pageUrl}
+
+${userInfo.connection !== 'N/A' ? `🔌 Connection: ${userInfo.connection.effectiveType}` : ''}`;
+
+          const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                  chat_id: TELEGRAM_CHAT_ID,
+                  text: message
+              })
+          });
+          
+          const result = await response.json();
+          if (result.ok) {
+              console.log('Telegram notification sent successfully');
+          } else {
+              console.error('Telegram error:', result);
+          }
+          
+      } catch (error) {
+          console.error('Telegram notification error:', error);
+      }
   }
   
   // Track download function
@@ -319,8 +353,8 @@ ${userInfo.connection !== 'N/A' ? `🔌 *Connection:* ${userInfo.connection.effe
           const userInfo = getUserInfo();
           const locationInfo = await getLocationInfo();
           
-          // Send WhatsApp notification
-          sendWhatsAppNotification(filename, userInfo, locationInfo);
+          // Send Telegram notification
+          sendTelegramNotification(filename, userInfo, locationInfo);
           
           // Optional: Also log to console for debugging (remove in production)
           console.log('Download tracked:', filename, userInfo, locationInfo);
