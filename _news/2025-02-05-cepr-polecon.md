@@ -5,6 +5,6 @@ date: 2025-02-05
 norender: true
 ---
 
-I will be in the audience at the <a href="/files/cepr_polecon.pdf">Warwick/UPF/Northwestern/CEPR Political Economy Symposium</a>, held at Einaudi Institute for Economics and Finance in Romi on March 14–15, 2025.
+I’m pleased to attend the <a href="/files/cepr_polecon.pdf">Warwick/UPF/Northwestern/CEPR Political Economy Symposium</a>, held at the Einaudi Institute for Economics and Finance in Rome on March 14–15, 2025.
 
 Many thanks to the organizers for welcoming me to this event.
