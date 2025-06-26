@@ -16,14 +16,18 @@ $(document).ready(function () {
       $("html").attr("data-theme") ||
       browserPref;
 
+    console.log("Setting theme to:", use_theme); // Debug line
+
     if (use_theme === "dark") {
       $("html").attr("data-theme", "dark");
       $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
       $("#theme-icon").attr("title", "Switch to Light Mode");
+      console.log("Set to dark mode - should show moon with 'Switch to Light Mode'"); // Debug line
     } else {
       $("html").removeAttr("data-theme");
       $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
       $("#theme-icon").attr("title", "Switch to Dark Mode");
+      console.log("Set to light mode - should show sun with 'Switch to Dark Mode'"); // Debug line
     }
   };
 
