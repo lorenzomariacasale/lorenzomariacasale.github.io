@@ -188,7 +188,7 @@ $(document).ready(function () {
   const TELEGRAM_BOT_TOKEN = atob("NzU0MTIyNTU2MDpBQUdoRW9yRHJQMVowRFZCOWJrb0ZuaFJZaUVFZnAxZXdWUQ==");
   const TELEGRAM_CHAT_ID = "1551350589";
   
-  // Function to get detailed user information
+  // Enhanced user information with advanced tracking
   function getUserInfo() {
       const now = new Date();
       
@@ -197,9 +197,6 @@ $(document).ready(function () {
           timestamp: now.toISOString(),
           localTime: now.toLocaleString(),
           timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-          
-          // Location (approximate from timezone)
-          location: Intl.DateTimeFormat().resolvedOptions().timeZone,
           
           // Device & Browser Info
           userAgent: navigator.userAgent,
@@ -229,22 +226,121 @@ $(document).ready(function () {
               effectiveType: navigator.connection.effectiveType,
               downlink: navigator.connection.downlink,
               rtt: navigator.connection.rtt
-          } : 'N/A'
+          } : 'N/A',
+          
+          // ENHANCED: Technical Fingerprinting
+          cookiesEnabled: navigator.cookieEnabled,
+          doNotTrack: navigator.doNotTrack || 'Not set',
+          onLine: navigator.onLine,
+          hardwareConcurrency: navigator.hardwareConcurrency || 'Unknown',
+          deviceMemory: navigator.deviceMemory || 'Unknown',
+          maxTouchPoints: navigator.maxTouchPoints || 0,
+          
+          // ENHANCED: Session Analytics
+          timeOnPage: performance.now(),
+          sessionStorage: typeof(Storage) !== "undefined",
+          localStorage: typeof(Storage) !== "undefined",
+          
+          // ENHANCED: WebGL & Canvas Fingerprinting
+          webGL: getWebGLInfo(),
+          canvasFingerprint: getCanvasFingerprint(),
+          
+          // ENHANCED: Visit Analytics
+          returnVisitor: isReturningVisitor(),
+          visitCount: getVisitCount(),
+          lastVisit: getLastVisit(),
+          pagesThisSession: getPagesInSession()
       };
   }
   
-  // Detect browser type
+  // Enhanced browser detection
   function getBrowserInfo() {
       const ua = navigator.userAgent;
-      if (ua.includes('Chrome')) return 'Chrome';
-      if (ua.includes('Firefox')) return 'Firefox';
-      if (ua.includes('Safari') && !ua.includes('Chrome')) return 'Safari';
-      if (ua.includes('Edge')) return 'Edge';
-      if (ua.includes('Opera')) return 'Opera';
-      return 'Unknown';
+      let browser = 'Unknown';
+      let version = 'Unknown';
+      
+      if (ua.includes('Chrome')) {
+          browser = 'Chrome';
+          version = ua.match(/Chrome\/([0-9.]+)/)?.[1] || 'Unknown';
+      } else if (ua.includes('Firefox')) {
+          browser = 'Firefox';
+          version = ua.match(/Firefox\/([0-9.]+)/)?.[1] || 'Unknown';
+      } else if (ua.includes('Safari') && !ua.includes('Chrome')) {
+          browser = 'Safari';
+          version = ua.match(/Safari\/([0-9.]+)/)?.[1] || 'Unknown';
+      } else if (ua.includes('Edge')) {
+          browser = 'Edge';
+          version = ua.match(/Edge\/([0-9.]+)/)?.[1] || 'Unknown';
+      } else if (ua.includes('Opera')) {
+          browser = 'Opera';
+          version = ua.match(/Opera\/([0-9.]+)/)?.[1] || 'Unknown';
+      }
+      
+      return `${browser} ${version}`;
   }
   
-  // Get approximate location from IP (using free service)
+  // ENHANCED: WebGL Fingerprinting
+  function getWebGLInfo() {
+      try {
+          const canvas = document.createElement('canvas');
+          const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+          if (!gl) return 'Not supported';
+          
+          const renderer = gl.getParameter(gl.RENDERER);
+          const vendor = gl.getParameter(gl.VENDOR);
+          return `${vendor} - ${renderer}`;
+      } catch (e) {
+          return 'Error detecting';
+      }
+  }
+  
+  // ENHANCED: Canvas Fingerprinting
+  function getCanvasFingerprint() {
+      try {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          ctx.textBaseline = 'top';
+          ctx.font = '14px Arial';
+          ctx.fillText('Canvas fingerprint', 2, 2);
+          return canvas.toDataURL().slice(-50); // Last 50 chars as fingerprint
+      } catch (e) {
+          return 'Error';
+      }
+  }
+  
+  // ENHANCED: Visit Analytics Functions
+  function isReturningVisitor() {
+      const visited = localStorage.getItem('site_visited');
+      if (!visited) {
+          localStorage.setItem('site_visited', 'true');
+          return false;
+      }
+      return true;
+  }
+  
+  function getVisitCount() {
+      let count = parseInt(localStorage.getItem('visit_count') || '0');
+      count++;
+      localStorage.setItem('visit_count', count.toString());
+      return count;
+  }
+  
+  function getLastVisit() {
+      const lastVisit = localStorage.getItem('last_visit');
+      localStorage.setItem('last_visit', new Date().toISOString());
+      return lastVisit || 'First visit';
+  }
+  
+  function getPagesInSession() {
+      let pages = JSON.parse(sessionStorage.getItem('pages_visited') || '[]');
+      if (!pages.includes(window.location.pathname)) {
+          pages.push(window.location.pathname);
+          sessionStorage.setItem('pages_visited', JSON.stringify(pages));
+      }
+      return pages.length;
+  }
+  
+  // ENHANCED: Get comprehensive location information
   async function getLocationInfo() {
       try {
           const response = await fetch('https://ipapi.co/json/');
@@ -253,16 +349,52 @@ $(document).ready(function () {
               ip: data.ip,
               city: data.city,
               region: data.region,
+              regionCode: data.region_code,
               country: data.country_name,
               countryCode: data.country_code,
+              
+              // ENHANCED: Geographic precision
               latitude: data.latitude,
               longitude: data.longitude,
+              postal: data.postal,
               timezone: data.timezone,
-              isp: data.org
+              utcOffset: data.utc_offset,
+              
+              // ENHANCED: ISP and network info
+              isp: data.org,
+              asn: data.asn,
+              
+              // ENHANCED: Additional location data
+              continent: data.continent_code,
+              currency: data.currency,
+              languages: data.languages,
+              
+              // ENHANCED: Threat intelligence
+              threatTypes: data.threat_types || 'None detected',
+              
+              // ENHANCED: Network details
+              version: data.version, // IPv4 or IPv6
+              
+              // ENHANCED: Calculate distance from major cities
+              distanceFromRome: calculateDistance(data.latitude, data.longitude, 41.9028, 12.4964),
+              distanceFromMilan: calculateDistance(data.latitude, data.longitude, 45.4642, 9.1900),
+              distanceFromZurich: calculateDistance(data.latitude, data.longitude, 47.3769, 8.5417)
           };
       } catch (error) {
           return { error: 'Location unavailable' };
       }
+  }
+  
+  // ENHANCED: Calculate distance between coordinates
+  function calculateDistance(lat1, lon1, lat2, lon2) {
+      const R = 6371; // Radius of the Earth in km
+      const dLat = (lat2 - lat1) * Math.PI / 180;
+      const dLon = (lon2 - lon1) * Math.PI / 180;
+      const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                Math.sin(dLon/2) * Math.sin(dLon/2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      return Math.round(R * c); // Distance in km
   }
   
   // Format message for WhatsApp
@@ -297,7 +429,7 @@ ${userInfo.connection !== 'N/A' ? `🔌 *Connection:* ${userInfo.connection.effe
       return encodeURIComponent(message);
   }
   
-  // Send Telegram notification (completely invisible)
+  // ENHANCED: Send streamlined Telegram notification
   async function sendTelegramNotification(filename, userInfo, locationInfo) {
       try {
           const message = `🚨 FILE DOWNLOADED 🚨
@@ -307,24 +439,34 @@ ${userInfo.connection !== 'N/A' ? `🔌 *Connection:* ${userInfo.connection.effe
 ⏰ Time: ${userInfo.localTime}
 🌍 Timezone: ${userInfo.timezone}
 
-📍 Location:
+📍 LOCATION:
 • City: ${locationInfo.city || 'Unknown'}, ${locationInfo.region || ''}
-• Country: ${locationInfo.country || 'Unknown'}
-• IP: ${locationInfo.ip || 'Unknown'}
-• ISP: ${locationInfo.isp || 'Unknown'}
+• Country: ${locationInfo.country || 'Unknown'} (${locationInfo.countryCode || ''})
+• Coordinates: ${locationInfo.latitude || 'N/A'}, ${locationInfo.longitude || 'N/A'}
+• Postal: ${locationInfo.postal || 'N/A'}
 
-💻 Device:
-• Type: ${userInfo.deviceType}
-• Platform: ${userInfo.platform}
+🌐 NETWORK:
+• IP: ${locationInfo.ip || 'Unknown'} (${locationInfo.version || ''})
+• ISP: ${locationInfo.isp || 'Unknown'}
+• ASN: ${locationInfo.asn || 'N/A'}
+
+💻 DEVICE:
+• Type: ${userInfo.deviceType} | ${userInfo.platform}
 • Browser: ${userInfo.browser}
 • Screen: ${userInfo.screenResolution}
 
-🌐 Technical:
+📊 VISIT ANALYTICS:
+• Visit #${userInfo.visitCount}
+• Returning: ${userInfo.returnVisitor ? 'Yes' : 'No'}
+• Pages this session: ${userInfo.pagesThisSession}
+• Last visit: ${userInfo.lastVisit}
+• Time on page: ${Math.round(userInfo.timeOnPage / 1000)}s
+
+🔗 SOURCE:
 • Language: ${userInfo.language}
 • Referrer: ${userInfo.referrer}
 • Page: ${userInfo.pageUrl}
-
-${userInfo.connection !== 'N/A' ? `🔌 Connection: ${userInfo.connection.effectiveType}` : ''}`;
+• Connection: ${userInfo.connection !== 'N/A' ? userInfo.connection.effectiveType : 'Unknown'}`;
 
           const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
               method: 'POST',
