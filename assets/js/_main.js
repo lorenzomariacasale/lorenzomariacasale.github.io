@@ -29,6 +29,9 @@ $(document).ready(function () {
       $("#theme-icon").attr("title", "Switch to Dark Mode");
       console.log("Set to light mode - should show sun with 'Switch to Dark Mode'"); // Debug line
     }
+    
+    // Force tooltip refresh
+    $("#theme-icon").trigger('mouseout').trigger('mouseover');
   };
 
   setTheme();
