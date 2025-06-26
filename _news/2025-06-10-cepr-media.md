@@ -5,6 +5,10 @@ date: 2025-06-10
 norender: true
 ---
 
-I’m looking forward to attending the <a href="/files/cepr_bocconi.pdf">3rd CEPR Workshop on Media, Technology, Politics, and Society</a>, hosted at Bocconi University in Milan on June 23–24, 2025.<br><br>
+<p>
+I’m looking forward to attending the <a href="/files/cepr_bocconi.pdf">3rd CEPR Workshop on Media, Technology, Politics, and Society</a>, hosted at Bocconi University in Milan on June 23–24, 2025.
+</p>
 
+<p>
 Many thanks to the organizers for welcoming me to this event.
+</p>
