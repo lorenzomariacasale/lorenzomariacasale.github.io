@@ -8,14 +8,14 @@ $dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : mix(#fff, $gray, 50%);
 
-/* Blue/Navy Color Palette - Complementary to Warm Cream Theme */
+/* Blue/Navy Color Palette - Complementary to Muted Linen Theme */
 $navy-darkest               : #0c1117;    // Very dark warm navy (main background)
 $navy-dark                  : #171d26;    // Dark warm navy (secondary areas)
 $navy-medium                : #242b36;    // Medium navy (borders and accents)
 $navy-light                 : #324050;    // Lighter navy for subtle elements
-$cream-text                 : #f8f5f0;    // Warm cream-white for text (complements light theme bg)
-$cream-secondary            : #e8e0d8;    // Muted cream for secondary text
-$blue-warm                  : #8ba5c7;    // Dusty blue for links (lighter for dark theme)
+$linen-text                 : #f3f1ed;    // Linen-white for text (matches light theme bg tone)
+$linen-secondary            : #e5e0d8;    // Muted linen tone for secondary text
+$blue-warm                  : #8ba5c7;    // Same dusty blue as light theme
 $blue-light                 : #a3b8d0;    // Light dusty blue for hover
 $blue-pale                  : #b8c9db;    // Pale dusty blue for visited links
 
@@ -45,14 +45,14 @@ html[data-theme="dark"] {
     --global-dark-border-color          : #{$navy-dark};
     --global-code-background-color      : #{$navy-darkest};
     --global-code-text-color            : #{$blue-light};
-    --global-fig-caption-color          : #{$cream-secondary};
+    --global-fig-caption-color          : #{$linen-secondary};
     --global-link-color                 : #{$blue-warm};
     --global-link-color-hover           : #{$blue-light};
     --global-link-color-visited         : #{$blue-pale};
-    --global-masthead-link-color        : #{$cream-text};
+    --global-masthead-link-color        : #{$linen-text};
     --global-masthead-link-color-hover  : #{$blue-warm};
-    --global-text-color                 : #{$cream-text};
-    --global-text-color-light           : #{$cream-secondary};
+    --global-text-color                 : #{$linen-text};
+    --global-text-color-light           : #{$linen-secondary};
     --global-thead-color                : #{$navy-darkest};
     
     /* Enhanced masthead/header styling for darker appearance */
@@ -77,8 +77,8 @@ html[data-theme="dark"] {
     --navy-medium                       : #{$navy-medium};
     --navy-light                        : #{$navy-light};
     
-    /* Cream text variants (complementary to light theme backgrounds) */
-    --cream-text-primary                : #{$cream-text};
-    --cream-text-secondary              : #{$cream-secondary};
-    --cream-text-muted                  : #d0c4b8;
+    /* Linen text variants (complementary to light theme backgrounds) */
+    --linen-text-primary                : #{$linen-text};
+    --linen-text-secondary              : #{$linen-secondary};
+    --linen-text-muted                  : #d0c4b8;
 }

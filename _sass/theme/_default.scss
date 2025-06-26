@@ -9,11 +9,11 @@ $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : #9ba1a6;
 $lighter-gray               : mix(#fff, $gray, 90%);
 
-/* Light Blue Color Palette - Complementary to Dark Navy with Cream Tones */
-$cream-bg                   : #fdfcf8;    // Warm cream background (main)
-$cream-secondary            : #f5f2ed;    // Warmer cream for secondary areas
-$cream-accent               : #edeae3;    // Darker cream for subtle accents
-$light-blue-tint            : #f0f6fd;    // Very subtle blue tint for variety
+/* Light Blue Color Palette - Muted Linen Theme */
+$linen-bg                   : #f6f4f0;    // Natural linen background
+$linen-secondary            : #ede9e3;    // Darker linen for secondary areas  
+$linen-accent               : #e2dbd3;    // Linen shadow for accents
+$linen-border               : #d5cdc2;    // Natural linen border tones
 $navy-text                  : #1a2332;    // Navy for main text (matches dark theme)
 $navy-secondary             : #34455c;    // Lighter navy for secondary text
 $blue-links                 : #8ba5c7;    // Same dusty blue as dark theme
@@ -39,12 +39,12 @@ $sidebar-screen-min-width   : 1024px;
 
 /* Default light theme for the site */
 :root {
-    --global-base-color                 : #{$cream-secondary};
-    --global-bg-color                   : #{$cream-bg};
-    --global-footer-bg-color            : #{$cream-secondary};
-    --global-border-color               : #d4c8b8;
-    --global-dark-border-color          : #c2b5a3;
-    --global-code-background-color      : #{$cream-accent};
+    --global-base-color                 : #{$linen-secondary};
+    --global-bg-color                   : #{$linen-bg};
+    --global-footer-bg-color            : #{$linen-secondary};
+    --global-border-color               : #{$linen-border};
+    --global-dark-border-color          : #c7beb1;
+    --global-code-background-color      : #{$linen-accent};
     --global-code-text-color            : #{$navy-text};
     --global-fig-caption-color          : #{$navy-secondary};
     --global-link-color                 : #{$blue-links};
@@ -54,12 +54,12 @@ $sidebar-screen-min-width   : 1024px;
     --global-masthead-link-color-hover  : #{$blue-links};
     --global-text-color                 : #{$navy-text};
     --global-text-color-light           : #{$navy-secondary};
-    --global-thead-color                : #{$cream-accent};
+    --global-thead-color                : #{$linen-accent};
     
     /* Enhanced masthead/header styling */
-    --global-masthead-bg-color          : #{$cream-secondary};
-    --global-masthead-border-color      : #c2b5a3;
-    --global-masthead-shadow            : 0 2px 12px rgba(26, 35, 50, 0.08);
+    --global-masthead-bg-color          : #{$linen-secondary};
+    --global-masthead-border-color      : #c7beb1;
+    --global-masthead-shadow            : 0 2px 12px rgba(26, 35, 50, 0.06);
     
     /* Enhanced transitions */
     --transition-fast                   : all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
@@ -72,9 +72,9 @@ $sidebar-screen-min-width   : 1024px;
     --accent-blue-dark                  : #6b8caf;
     --accent-blue-darker                : #4a6b89;
     
-    /* Cream background variants */
-    --cream-lightest                    : #{$cream-bg};
-    --cream-base                        : #{$cream-secondary};
-    --cream-accent                      : #{$cream-accent};
-    --cream-darker                      : #e0dbd2;
+    /* Linen background variants */
+    --linen-lightest                    : #{$linen-bg};
+    --linen-base                        : #{$linen-secondary};
+    --linen-accent                      : #{$linen-accent};
+    --linen-darker                      : #d8d0c5;
 }
