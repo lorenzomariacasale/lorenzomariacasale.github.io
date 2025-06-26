@@ -20,7 +20,7 @@ $(document).ready(function () {
       $("html").attr("data-theme", "dark");
       $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
       $("#theme-icon").attr("title", "Switch to Light Mode");
-    } else if (use_theme === "light") {
+    } else {
       $("html").removeAttr("data-theme");
       $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
       $("#theme-icon").attr("title", "Switch to Dark Mode");
