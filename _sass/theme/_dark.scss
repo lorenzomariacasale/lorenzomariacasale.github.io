@@ -8,15 +8,16 @@ $dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : mix(#fff, $gray, 50%);
 
-/* Blue/Navy Color Palette */
-$navy-dark                  : #0f1419;    // Very dark navy for main background
-$navy-medium                : #1a2332;    // Medium navy for secondary backgrounds
-$navy-light                 : #253045;    // Lighter navy for borders
-$blue-bright                : #4a9eff;    // Bright blue for links and accents
-$blue-light                 : #70b3ff;    // Light blue for hover states
-$blue-pale                  : #a8d0ff;    // Pale blue for visited links
-$text-primary               : #e8f4ff;    // Light blue-tinted white for text
-$text-secondary             : #b8d4f0;    // Muted blue-gray for secondary text
+/* Blue/Navy Color Palette - Complementary to Warm Cream Theme */
+$navy-darkest               : #0c1117;    // Very dark warm navy (main background)
+$navy-dark                  : #171d26;    // Dark warm navy (secondary areas)
+$navy-medium                : #242b36;    // Medium navy (borders and accents)
+$navy-light                 : #324050;    // Lighter navy for subtle elements
+$cream-text                 : #f8f5f0;    // Warm cream-white for text (complements light theme bg)
+$cream-secondary            : #e8e0d8;    // Muted cream for secondary text
+$blue-warm                  : #5ba3ff;    // Warm blue for links (slightly warmer than pure blue)
+$blue-light                 : #7db8ff;    // Light warm blue for hover
+$blue-pale                  : #a8ccff;    // Pale warm blue for visited links
 
 /* Color codes used for the site */
 $danger-color               : #ff6b6b;
@@ -37,42 +38,47 @@ $sidebar-screen-min-width   : 1024px;
 
 /* Dark theme for the site */
 html[data-theme="dark"] {
-    --global-base-color                 : #{$navy-dark};
-    --global-bg-color                   : #{$navy-medium};
-    --global-footer-bg-color            : #{$navy-dark};
-    --global-border-color               : #{$navy-light};
-    --global-dark-border-color          : #1a2332;
-    --global-code-background-color      : #{$navy-dark};
+    --global-base-color                 : #{$navy-darkest};
+    --global-bg-color                   : #{$navy-dark};
+    --global-footer-bg-color            : #{$navy-darkest};
+    --global-border-color               : #{$navy-medium};
+    --global-dark-border-color          : #{$navy-dark};
+    --global-code-background-color      : #{$navy-darkest};
     --global-code-text-color            : #{$blue-light};
-    --global-fig-caption-color          : #{$text-secondary};
-    --global-link-color                 : #{$blue-bright};
+    --global-fig-caption-color          : #{$cream-secondary};
+    --global-link-color                 : #{$blue-warm};
     --global-link-color-hover           : #{$blue-light};
     --global-link-color-visited         : #{$blue-pale};
-    --global-masthead-link-color        : #{$text-primary};
-    --global-masthead-link-color-hover  : #{$blue-bright};
-    --global-text-color                 : #{$text-primary};
-    --global-text-color-light           : #{$text-secondary};
-    --global-thead-color                : #{$navy-dark};
+    --global-masthead-link-color        : #{$cream-text};
+    --global-masthead-link-color-hover  : #{$blue-warm};
+    --global-text-color                 : #{$cream-text};
+    --global-text-color-light           : #{$cream-secondary};
+    --global-thead-color                : #{$navy-darkest};
     
     /* Enhanced masthead/header styling for darker appearance */
-    --global-masthead-bg-color          : #{$navy-dark};
-    --global-masthead-border-color      : #{$navy-light};
-    --global-masthead-shadow            : 0 2px 12px rgba(0, 0, 0, 0.5);
+    --global-masthead-bg-color          : #{$navy-darkest};
+    --global-masthead-border-color      : #{$navy-medium};
+    --global-masthead-shadow            : 0 2px 12px rgba(0, 0, 0, 0.6);
     
     /* Enhanced transitions */
     --transition-fast                   : all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-normal                 : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow                   : all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     
-    /* Blue-based accent colors */
+    /* Warm blue-based accent colors */
     --accent-blue-light                 : #{$blue-light};
-    --accent-blue-medium                : #{$blue-bright};
-    --accent-blue-dark                  : #2c7cd1;
-    --accent-blue-darker                : #1a5490;
+    --accent-blue-medium                : #{$blue-warm};
+    --accent-blue-dark                  : #3d85d9;
+    --accent-blue-darker                : #265394;
     
-    /* Navy-based background variants */
-    --navy-darker                       : #{$navy-dark};
-    --navy-base                         : #{$navy-medium};
-    --navy-lighter                      : #{$navy-light};
-    --navy-accent                       : #34455c;
+    /* Warm navy-based background variants */
+    --navy-darkest                      : #{$navy-darkest};
+    --navy-dark                         : #{$navy-dark};
+    --navy-medium                       : #{$navy-medium};
+    --navy-light                        : #{$navy-light};
+    
+    /* Cream text variants (complementary to light theme backgrounds) */
+    --cream-text-primary                : #{$cream-text};
+    --cream-text-secondary              : #{$cream-secondary};
+    --cream-text-muted                  : #d0c4b8;
 }
