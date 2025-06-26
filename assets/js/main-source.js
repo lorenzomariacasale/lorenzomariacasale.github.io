@@ -61,7 +61,8 @@ $(document).ready(function () {
   // Manual theme toggle
   var toggleTheme = function() {
     // Get the current theme from the HTML element (what's actually applied)
-    const currentTheme = $("html").attr("data-theme") === "dark" ? "dark" : "light";
+    const htmlDataTheme = $("html").attr("data-theme");
+    const currentTheme = htmlDataTheme === "dark" ? "dark" : "light";
     const newTheme = currentTheme === "dark" ? "light" : "dark";
     
     // Save user's manual preference
