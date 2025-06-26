@@ -160,7 +160,6 @@ include:
   - .htaccess
   - _pages
   - files
-  - assets/js/_main.js
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
