@@ -34,6 +34,7 @@ $(document).ready(function () {
     if (savedTheme) {
       return savedTheme;
     }
+    // If no saved preference, use system preference
     return systemPrefersDark ? "dark" : "light";
   };
 
