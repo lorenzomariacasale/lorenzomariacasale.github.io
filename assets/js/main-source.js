@@ -72,8 +72,8 @@ $(document).ready(function () {
     console.log("Theme manually toggled from", currentTheme, "to:", newTheme);
   };
 
-  // Bind the toggle function to the button
-  $('#theme-toggle').on('click', toggleTheme);
+  // Bind the toggle function to the button (remove any existing handlers first)
+  $('#theme-toggle').off('click').on('click', toggleTheme);
 
   // These should be the same as the settings in _variables.scss
   const scssLarge = 925; // pixels
