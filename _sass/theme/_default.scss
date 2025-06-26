@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DEFAULT THEME
+   DEFAULT THEME - COMPLEMENTARY LIGHT BLUE COLOR SCHEME
    ========================================================================== */
 
 /* Color codes used for the theme */
@@ -9,16 +9,26 @@ $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : #9ba1a6;
 $lighter-gray               : mix(#fff, $gray, 90%);
 
+/* Light Blue Color Palette - Complementary to Dark Navy */
+$light-blue-bg              : #f8fbff;    // Very light blue-white background
+$light-blue-secondary       : #e8f2ff;    // Light blue for secondary areas
+$light-blue-accent          : #d0e7ff;    // Accent blue for highlights
+$navy-text                  : #1a2332;    // Navy for main text (matches dark theme)
+$navy-secondary             : #34455c;    // Lighter navy for secondary text
+$blue-links                 : #2c7cd1;    // Blue for links (darker than dark theme)
+$blue-hover                 : #1a5490;    // Darker blue for hover
+$blue-visited               : #4a63a0;    // Purple-blue for visited links
+
 /* Color codes used for the site */
-$danger-color               : #ee5f5b;
-$info-color                 : #2f7f93;
-$notice-color               : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
+$danger-color               : #dc3545;
+$info-color                 : #2c7cd1;
+$notice-color               : #6c757d;
+$success-color              : #28a745;
+$warning-color              : #ffc107;
 
 /* Other basic settings for the template */
 $border-radius              : 4px;
-$box-shadow                 : 0 2px 8px rgba(0, 0, 0, 0.1);
+$box-shadow                 : 0 2px 8px rgba(26, 35, 50, 0.08);
 $global-transition          : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 $masthead-height            : 70px;
 $navicon-width              : 28px;
@@ -28,36 +38,42 @@ $sidebar-screen-min-width   : 1024px;
 
 /* Default light theme for the site */
 :root {
-    --global-base-color                 : #e8f2f2;
-    --global-bg-color                   : #ffffff;
-    --global-footer-bg-color            : #e8f2f2;
-    --global-border-color               : #c7d9d9;
-    --global-dark-border-color          : #b0c7c7;
-    --global-code-background-color      : #f5f9f9;
-    --global-code-text-color            : #2d4d4d;
-    --global-fig-caption-color          : #4a7070;
-    --global-link-color                 : #2b9999;
-    --global-link-color-hover           : #1f7575;
-    --global-link-color-visited         : #3d8585;
-    --global-masthead-link-color        : #2d4d4d;
-    --global-masthead-link-color-hover  : #2b9999;
-    --global-text-color                 : #2d4d4d;
-    --global-text-color-light           : #4a7070;
-    --global-thead-color                : #f5f9f9;
+    --global-base-color                 : #{$light-blue-secondary};
+    --global-bg-color                   : #{$light-blue-bg};
+    --global-footer-bg-color            : #{$light-blue-secondary};
+    --global-border-color               : #c7d9f0;
+    --global-dark-border-color          : #b0c4df;
+    --global-code-background-color      : #{$light-blue-accent};
+    --global-code-text-color            : #{$navy-text};
+    --global-fig-caption-color          : #{$navy-secondary};
+    --global-link-color                 : #{$blue-links};
+    --global-link-color-hover           : #{$blue-hover};
+    --global-link-color-visited         : #{$blue-visited};
+    --global-masthead-link-color        : #{$navy-text};
+    --global-masthead-link-color-hover  : #{$blue-links};
+    --global-text-color                 : #{$navy-text};
+    --global-text-color-light           : #{$navy-secondary};
+    --global-thead-color                : #{$light-blue-accent};
     
     /* Enhanced masthead/header styling */
-    --global-masthead-bg-color          : #e8f2f2;
-    --global-masthead-border-color      : #b0c7c7;
-    --global-masthead-shadow            : 0 2px 12px rgba(0, 0, 0, 0.08);
+    --global-masthead-bg-color          : #{$light-blue-secondary};
+    --global-masthead-border-color      : #b0c4df;
+    --global-masthead-shadow            : 0 2px 12px rgba(26, 35, 50, 0.08);
     
     /* Enhanced transitions */
     --transition-fast                   : all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-normal                 : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow                   : all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     
-    /* Teal-based accent colors */
-    --accent-teal-light                 : #66d9d9;
-    --accent-teal-medium                : #4dd0d0;
-    --accent-teal-dark                  : #33b8b8;
-    --accent-teal-darker                : #1a9999;
+    /* Blue-based accent colors */
+    --accent-blue-light                 : #70b3ff;
+    --accent-blue-medium                : #{$blue-links};
+    --accent-blue-dark                  : #{$blue-hover};
+    --accent-blue-darker                : #0d3a66;
+    
+    /* Light blue background variants */
+    --light-blue-lightest               : #{$light-blue-bg};
+    --light-blue-base                   : #{$light-blue-secondary};
+    --light-blue-accent                 : #{$light-blue-accent};
+    --light-blue-darker                 : #c0d6f0;
 }
