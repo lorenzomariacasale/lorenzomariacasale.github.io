@@ -7,7 +7,7 @@ postconf: true
 postconf_text: >
   It was a real pleasure to take part in the Doctorissimes Conference! Many thanks to the organizers for putting together such a stimulating event.  
 
-  We're especially grateful to <a href="https://philinew.github.io/">Philine Widmer</a> for her thoughtful and engaging discussion of our paper.<br><br>
+  I am especially grateful to <a href="https://philinew.github.io/">Philine Widmer</a> for her thoughtful and engaging discussion of our paper.<br><br>
   <a href="/files/doctorissimes.pdf">Conference Program</a>  
 ---
 
