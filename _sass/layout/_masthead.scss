@@ -65,3 +65,43 @@
     font-weight: 700;
   }
 }
+
+/* ==========================================================================
+   THEME TOGGLE STYLING
+   ========================================================================== */
+
+#theme-toggle {
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    transition: var(--transition-fast);
+    color: var(--global-masthead-link-color);
+    
+    &:hover {
+      background-color: var(--global-border-color);
+      color: var(--global-masthead-link-color-hover);
+    }
+  }
+
+  #theme-icon {
+    font-size: 1rem;
+    transition: var(--transition-fast);
+  }
+
+  #theme-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: var(--transition-fast);
+  }
+
+  // Hide text on smaller screens to save space
+  @media (max-width: 768px) {
+    #theme-text {
+      display: none;
+    }
+  }
+}
