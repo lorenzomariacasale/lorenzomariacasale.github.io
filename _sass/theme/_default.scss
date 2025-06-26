@@ -16,9 +16,9 @@ $linen-accent               : #e2dbd3;    // Linen shadow for accents
 $linen-border               : #d5cdc2;    // Natural linen border tones
 $navy-text                  : #1a2332;    // Navy for main text (matches dark theme)
 $navy-secondary             : #34455c;    // Lighter navy for secondary text
-$blue-links                 : #8ba5c7;    // Same dusty blue as dark theme
-$blue-hover                 : #a3b8d0;    // Same light dusty blue for hover
-$blue-visited               : #b8c9db;    // Same pale dusty blue for visited links
+$blue-links                 : #4a6b89;    // Darker navy-influenced dusty blue for better contrast
+$blue-hover                 : #34455c;    // Very dark navy (matching secondary text)
+$blue-visited               : #5d7a9a;    // Medium dusty blue for visited links
 
 /* Color codes used for the site */
 $danger-color               : #dc3545;
@@ -66,11 +66,11 @@ $sidebar-screen-min-width   : 1024px;
     --transition-normal                 : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow                   : all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     
-    /* Dusty blue-based accent colors (matching dark theme) */
-    --accent-blue-light                 : #a3b8d0;
+    /* Darker dusty blue-based accent colors (complementary to dark theme) */
+    --accent-blue-light                 : #5d7a9a;
     --accent-blue-medium                : #{$blue-links};
-    --accent-blue-dark                  : #6b8caf;
-    --accent-blue-darker                : #4a6b89;
+    --accent-blue-dark                  : #{$blue-hover};
+    --accent-blue-darker                : #2d3e4f;
     
     /* Linen background variants */
     --linen-lightest                    : #{$linen-bg};
