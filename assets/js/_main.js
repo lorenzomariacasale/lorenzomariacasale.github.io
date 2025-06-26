@@ -19,11 +19,11 @@ $(document).ready(function () {
     if (use_theme === "dark") {
       $("html").attr("data-theme", "dark");
       $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
-      $("#theme-text").text("Switch to Light Mode");
+      $("#theme-icon").attr("title", "Switch to Light Mode");
     } else if (use_theme === "light") {
       $("html").removeAttr("data-theme");
       $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
-      $("#theme-text").text("Switch to Dark Mode");
+      $("#theme-icon").attr("title", "Switch to Dark Mode");
     }
   };
 
