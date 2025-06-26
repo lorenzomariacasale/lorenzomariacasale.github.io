@@ -19,11 +19,9 @@ $(document).ready(function () {
     if (use_theme === "dark") {
       $("html").attr("data-theme", "dark");
       $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
-      $("#theme-text").text("Switch to Light Mode");
     } else if (use_theme === "light") {
       $("html").removeAttr("data-theme");
       $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
-      $("#theme-text").text("Switch to Dark Mode");
     }
   };
 
@@ -106,7 +104,7 @@ $(document).ready(function () {
   // 1) Wrap every <p><img> (except emoji images) in an <a> pointing at the image, and give it the lightbox class
   $('p > img').not('.emoji').each(function() {
     var $img = $(this);
-    // skip if it's already wrapped in an <a.image-popup>
+    // skip if it’s already wrapped in an <a.image-popup>
     if ( ! $img.parent().is('a.image-popup') ) {
       $('<a>')
         .addClass('image-popup')
@@ -130,11 +128,11 @@ $(document).ready(function () {
     },
     removalDelay: 500, // Delay in milliseconds before popup is removed
     // Class that is added to body when popup is open.
-    // Make it a bit unique to avoid conflicts with out animations
+    // make it unique to apply your CSS animations just to this exact popup
     mainClass: 'mfp-zoom-in',
     callbacks: {
-      beforeOpen: function() {
-        // just a hack that adds mfp-anim class to markup 
+      beforeOpen: function () {
+        // just a hack that adds mfp-anim class to markup
         this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
       }
     },
