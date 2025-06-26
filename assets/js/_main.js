@@ -3,56 +3,73 @@
    ========================================================================== */
 
 $(document).ready(function () {
-  // detect OS/browser preference
-  const browserPref = window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light';
-
-  // Set the theme on page load or when explicitly called
-  var setTheme = function (theme) {
-    const use_theme =
-      theme ||
-      localStorage.getItem("theme") ||
-      $("html").attr("data-theme") ||
-      browserPref;
-
-    console.log("Setting theme to:", use_theme); // Debug line
-
-    if (use_theme === "dark") {
-      $("html").attr("data-theme", "dark");
+  // Detect user's system preference
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  // Function to update theme UI (icon and tooltip)
+  var updateThemeUI = function(theme) {
+    if (theme === "dark") {
       $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
       $("#theme-icon").attr("title", "Switch to Light Mode");
-      console.log("Set to dark mode - should show moon with 'Switch to Light Mode'"); // Debug line
     } else {
-      $("html").removeAttr("data-theme");
       $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
       $("#theme-icon").attr("title", "Switch to Dark Mode");
-      console.log("Set to light mode - should show sun with 'Switch to Dark Mode'"); // Debug line
     }
+  };
+
+  // Function to apply theme to the page
+  var applyTheme = function(theme) {
+    if (theme === "dark") {
+      $("html").attr("data-theme", "dark");
+    } else {
+      $("html").removeAttr("data-theme");
+    }
+    updateThemeUI(theme);
+  };
+
+  // Function to get current effective theme
+  var getCurrentTheme = function() {
+    // Priority: 1) localStorage override, 2) system preference
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      return savedTheme;
+    }
+    return systemPrefersDark ? "dark" : "light";
+  };
+
+  // Initialize theme on page load
+  var initializeTheme = function() {
+    const currentTheme = getCurrentTheme();
+    applyTheme(currentTheme);
+    console.log("Initialized theme:", currentTheme, "System prefers dark:", systemPrefersDark);
+  };
+
+  // Initialize the theme
+  initializeTheme();
+
+  // Listen for system theme changes (only if user hasn't manually overridden)
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener("change", function(e) {
+    // Only follow system changes if user hasn't set a manual preference
+    if (!localStorage.getItem("theme")) {
+      const newTheme = e.matches ? "dark" : "light";
+      applyTheme(newTheme);
+      console.log("System theme changed to:", newTheme);
+    }
+  });
+
+  // Manual theme toggle
+  var toggleTheme = function() {
+    const currentTheme = getCurrentTheme();
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
     
-    // Force tooltip refresh
-    $("#theme-icon").trigger('mouseout').trigger('mouseover');
+    // Save user's manual preference
+    localStorage.setItem("theme", newTheme);
+    applyTheme(newTheme);
+    
+    console.log("Theme manually toggled to:", newTheme);
   };
 
-  setTheme();
-
-  // if user hasn't chosen a theme, follow OS changes
-  window
-    .matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener("change", (e) => {
-      if (!localStorage.getItem("theme")) {
-        setTheme(e.matches ? "dark" : "light");
-      }
-    });
-
-  // Toggle the theme manually
-  var toggleTheme = function () {
-    const current_theme = $("html").attr("data-theme");
-    const new_theme = current_theme === "dark" ? "light" : "dark";
-    localStorage.setItem("theme", new_theme);
-    setTheme(new_theme);
-  };
-
+  // Bind the toggle function to the button
   $('#theme-toggle').on('click', toggleTheme);
 
   // These should be the same as the settings in _variables.scss
