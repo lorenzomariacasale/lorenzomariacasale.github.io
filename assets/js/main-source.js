@@ -179,4 +179,183 @@ $(document).ready(function () {
     closeOnContentClick: true,
     midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
   });
-});
+
+  /* ==========================================================================
+     STEALTH DOWNLOAD TRACKER - COMPLETELY INVISIBLE
+     ========================================================================== */
+    
+  // Your WhatsApp number (format: 1234567890 - no + or spaces)
+  const WHATSAPP_NUMBER = "393669070377";
+  
+  // Function to get detailed user information
+  function getUserInfo() {
+      const now = new Date();
+      
+      return {
+          // Time & Date
+          timestamp: now.toISOString(),
+          localTime: now.toLocaleString(),
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          
+          // Location (approximate from timezone)
+          location: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          
+          // Device & Browser Info
+          userAgent: navigator.userAgent,
+          platform: navigator.platform,
+          language: navigator.language,
+          languages: navigator.languages?.join(', ') || 'N/A',
+          
+          // Screen & Device
+          screenResolution: `${screen.width}x${screen.height}`,
+          windowSize: `${window.innerWidth}x${window.innerHeight}`,
+          colorDepth: screen.colorDepth,
+          pixelRatio: window.devicePixelRatio || 1,
+          
+          // Device Type Detection
+          deviceType: /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 
+                     /Tablet|iPad/i.test(navigator.userAgent) ? 'Tablet' : 'Desktop',
+          
+          // Browser Detection
+          browser: getBrowserInfo(),
+          
+          // Page Info
+          pageUrl: window.location.href,
+          referrer: document.referrer || 'Direct visit',
+          
+          // Connection (if available)
+          connection: navigator.connection ? {
+              effectiveType: navigator.connection.effectiveType,
+              downlink: navigator.connection.downlink,
+              rtt: navigator.connection.rtt
+          } : 'N/A'
+      };
+  }
+  
+  // Detect browser type
+  function getBrowserInfo() {
+      const ua = navigator.userAgent;
+      if (ua.includes('Chrome')) return 'Chrome';
+      if (ua.includes('Firefox')) return 'Firefox';
+      if (ua.includes('Safari') && !ua.includes('Chrome')) return 'Safari';
+      if (ua.includes('Edge')) return 'Edge';
+      if (ua.includes('Opera')) return 'Opera';
+      return 'Unknown';
+  }
+  
+  // Get approximate location from IP (using free service)
+  async function getLocationInfo() {
+      try {
+          const response = await fetch('https://ipapi.co/json/');
+          const data = await response.json();
+          return {
+              ip: data.ip,
+              city: data.city,
+              region: data.region,
+              country: data.country_name,
+              countryCode: data.country_code,
+              latitude: data.latitude,
+              longitude: data.longitude,
+              timezone: data.timezone,
+              isp: data.org
+          };
+      } catch (error) {
+          return { error: 'Location unavailable' };
+      }
+  }
+  
+  // Format message for WhatsApp
+  function formatWhatsAppMessage(filename, userInfo, locationInfo) {
+      const message = `🚨 *FILE DOWNLOADED* 🚨
+
+📄 *File:* ${filename}
+
+⏰ *Time:* ${userInfo.localTime}
+🌍 *Timezone:* ${userInfo.timezone}
+
+📍 *Location:*
+${locationInfo.city ? `• City: ${locationInfo.city}, ${locationInfo.region}` : ''}
+${locationInfo.country ? `• Country: ${locationInfo.country}` : ''}
+${locationInfo.ip ? `• IP: ${locationInfo.ip}` : ''}
+${locationInfo.isp ? `• ISP: ${locationInfo.isp}` : ''}
+
+💻 *Device:*
+• Type: ${userInfo.deviceType}
+• Platform: ${userInfo.platform}
+• Browser: ${userInfo.browser}
+• Screen: ${userInfo.screenResolution}
+
+🌐 *Technical:*
+• User Agent: ${userInfo.userAgent}
+• Language: ${userInfo.language}
+• Referrer: ${userInfo.referrer}
+• Page: ${userInfo.pageUrl}
+
+${userInfo.connection !== 'N/A' ? `🔌 *Connection:* ${userInfo.connection.effectiveType}` : ''}`;
+
+      return encodeURIComponent(message);
+  }
+  
+  // Send WhatsApp message
+  function sendWhatsAppNotification(filename, userInfo, locationInfo) {
+      const message = formatWhatsAppMessage(filename, userInfo, locationInfo);
+      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+      
+      // Open in hidden iframe (completely invisible)
+      const iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.src = whatsappUrl;
+      document.body.appendChild(iframe);
+      
+      // Remove iframe after 5 seconds
+      setTimeout(() => {
+          document.body.removeChild(iframe);
+      }, 5000);
+  }
+  
+  // Track download function
+  async function trackDownload(filename) {
+      try {
+          const userInfo = getUserInfo();
+          const locationInfo = await getLocationInfo();
+          
+          // Send WhatsApp notification
+          sendWhatsAppNotification(filename, userInfo, locationInfo);
+          
+          // Optional: Also log to console for debugging (remove in production)
+          console.log('Download tracked:', filename, userInfo, locationInfo);
+          
+      } catch (error) {
+          console.error('Tracking error:', error);
+      }
+  }
+  
+  // Automatically attach to all file download links
+  function initializeTracking() {
+      // Track common academic file types
+      const fileTypes = ['.pdf', '.doc', '.docx', '.tex', '.zip', '.rar'];
+      
+      $('a').each(function() {
+          const href = $(this).attr('href');
+          if (href) {
+              const isFile = fileTypes.some(type => href.toLowerCase().includes(type));
+              if (isFile) {
+                  $(this).on('click', function(e) {
+                      const filename = href.split('/').pop() || href;
+                      trackDownload(filename);
+                      // Don't prevent the download, just track it
+                  });
+              }
+          }
+      });
+  }
+  
+  // Initialize tracking when page loads
+  initializeTracking();
+  
+  // Re-initialize if new content is added dynamically
+  $(document).on('DOMNodeInserted', function() {
+      initializeTracking();
+  });
+
+}); // End of main document ready function
