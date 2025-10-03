@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I'm Lorenzo Maria Casale, a 4th year PhD student in Economics at the University of Zurich and UBS Center for Economics in Society scholarship holder. Welcome to my website!
+Hi, I'm Lorenzo Maria Casale, a 4th year PhD candidate in the <a href="https://www.econ.uzh.ch/en.html">Department of Economics</a> at the University of Zurich and <a href="https://www.ubscenter.uzh.ch/en/about.html">UBS Center for Economics in Society</a> scholarship holder. Welcome to my website!
 
 Born and raised in Rome, I hold my Bachelor and Master in Economics from Tor Vergata University. I joined the PhD program in 2022 after a pre-doc with Prof. Hans-Joachim Voth and Prof. Bruno Caprettini.
 
