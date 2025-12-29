@@ -71,8 +71,12 @@ h3.archive__subtitle {
 }
 
 .archive__item-inline-excerpt {
-  font-style: normal;
-  color: var(--global-text-color);
+  font-style: inherit;
+  color: inherit;
+}
+
+.archive__item-pre {
+  margin-right: 0.25em;
 }
 
 /* remove border*/

@@ -28,6 +28,9 @@
 
     {% if post.collection == 'news' %}
       <p class="archive__news-inline" itemprop="headline">
+        {% if post.pre %}
+          <span class="archive__item-pre">{{ post.pre }}</span>
+        {% endif %}
         {% if post.norender %}
           <span class="archive__item-title--static">{{ title }}</span>
         {% elsif post.link %}
