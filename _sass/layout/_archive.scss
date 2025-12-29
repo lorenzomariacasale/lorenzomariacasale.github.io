@@ -77,6 +77,12 @@ h3.archive__subtitle {
 
 .archive__item-pre {
   margin-right: 0.25em;
+  font-style: normal;
+}
+
+.archive__item-post {
+  font-style: inherit;
+  color: inherit;
 }
 
 /* remove border*/

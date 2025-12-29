@@ -39,7 +39,9 @@
         {% else %}
           <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
         {% endif %}
-        {% if post.excerpt %}
+        {% if post.post %}
+          <span class="archive__item-post">{{ post.post | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>
+        {% elsif post.excerpt %}
           — <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>
         {% endif %}
       </p>
