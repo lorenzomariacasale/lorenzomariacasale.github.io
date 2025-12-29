@@ -68,6 +68,7 @@ h3.archive__subtitle {
   font-family: $sans-serif-narrow;
   font-size: $type-size-5;
   font-style: normal;
+  white-space: normal;
 }
 
 .archive__item-inline-excerpt {
@@ -85,7 +86,7 @@ h3.archive__subtitle {
 }
 
 .archive__item-post {
-  font-style: inherit;
+  font-style: normal;
   color: inherit;
 }
 
