@@ -47,6 +47,11 @@ h3.archive__subtitle {
   font-size: $type-size-4;
 }
 
+.page__content h2.archive__subtitle {
+  border-bottom: none;
+  padding-bottom: 0.25em;
+}
+
 .archive__item-title {
   margin-bottom: 0.25em;
   font-family: $sans-serif-narrow;
@@ -56,6 +61,18 @@ h3.archive__subtitle {
   a + a {
     opacity: 0.5;
   }
+}
+
+.archive__news-inline {
+  margin: 0 0 0.75em;
+  font-family: $sans-serif-narrow;
+  font-size: $type-size-5;
+  font-style: italic;
+}
+
+.archive__item-inline-excerpt {
+  font-style: normal;
+  color: var(--global-text-color);
 }
 
 /* remove border*/
