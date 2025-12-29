@@ -28,22 +28,22 @@
 
     {% if post.collection == 'news' %}
       <p class="archive__news-inline" itemprop="headline">
-        {% if post.pre %}
-          <span class="archive__item-pre">{{ post.pre }}</span>
-        {% endif %}
-        {% if post.norender %}
-          <span class="archive__item-title--static">{{ title }}</span>
-        {% elsif post.link %}
-          <a href="{{ post.link }}">{{ title }}</a>
-          <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-        {% else %}
-          <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-        {% endif %}
-        {% if post.post %}
+        {%- if post.pre -%}<span class="archive__item-pre">{{ post.pre }}</span>{%- endif -%}
+        <span class="archive__item-title-inline">
+          {% if post.norender %}
+            <span class="archive__item-title--static">{{ title }}</span>
+          {% elsif post.link %}
+            <a href="{{ post.link }}">{{ title }}</a>
+            <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+          {% else %}
+            <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+          {% endif %}
+        </span>
+        {%- if post.post -%}
           <span class="archive__item-post">{{ post.post | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>
-        {% elsif post.excerpt %}
+        {%- elsif post.excerpt -%}
           — <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>
-        {% endif %}
+        {%- endif -%}
       </p>
     {% else %}
       <h2 class="archive__item-title" itemprop="headline">

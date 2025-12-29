@@ -67,7 +67,7 @@ h3.archive__subtitle {
   margin: 0 0 0.75em;
   font-family: $sans-serif-narrow;
   font-size: $type-size-5;
-  font-style: italic;
+  font-style: normal;
 }
 
 .archive__item-inline-excerpt {
@@ -78,6 +78,10 @@ h3.archive__subtitle {
 .archive__item-pre {
   margin-right: 0.25em;
   font-style: normal;
+}
+
+.archive__item-title-inline {
+  font-style: italic;
 }
 
 .archive__item-post {
