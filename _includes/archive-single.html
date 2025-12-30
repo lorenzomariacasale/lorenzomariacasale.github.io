@@ -47,16 +47,18 @@
           {%- endif -%}
         </span>{%- if post_clean != '' -%}
           {%- if post_clean == '.' -%}
-            <span class="archive__item-post">{{ post_clean }}</span>
+            {%- if excerpt_clean == '' -%}
+              <span class="archive__item-post">{{ post_clean }}</span>
+            {%- endif -%}
           {%- else -%}
             <span class="archive__item-post"> {{ post.post | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>
           {%- endif -%}
         {%- endif -%}
         {%- if excerpt_clean != '' -%}
           {%- if post_clean == '.' -%}
-            &mdash; <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>
+             — <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>
           {%- else -%}
-            &nbsp;&mdash; <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>
+             — <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>
           {%- endif -%}
         {%- endif -%}
       {%- endcapture -%}
