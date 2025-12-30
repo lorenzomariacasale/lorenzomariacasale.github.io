@@ -53,7 +53,7 @@
             <span class="archive__item-post"> {{ post.post | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>
           {%- endif -%}
         {%- endif -%}
-        {%- if excerpt_clean != '' -%} &mdash; <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>{%- endif -%}
+        {%- if excerpt_clean != '' -%} &nbsp;&mdash; <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>{%- endif -%}
       {%- endcapture -%}
       <p class="archive__news-inline" itemprop="headline">{{ news_line | strip }}</p>
     {% else %}
@@ -94,7 +94,7 @@
 
     {% if post.abstract %}
       <p>
-        <a href="#" class="toggle-abstract" onclick="toggleAbstract(this); return false;">ƒ- Abstract</a>
+        <a href="#" class="toggle-abstract toggle-section" data-collapsed-text="Show Abstract" data-expanded-text="Hide Abstract" aria-expanded="false" onclick="return toggleSection(this);">Show Abstract</a>
       </p>
       <div class="abstract-text" style="display: none;">
         <p>{{ post.abstract }}</p>
@@ -103,7 +103,7 @@
 
     {% if post.teaching_desc %}
       <p>
-        <a href="#" class="toggle-teaching-desc" onclick="toggleTeachingDesc(this); return false;">ƒ- Task Description & Topics Analyzed</a>
+        <a href="#" class="toggle-teaching-desc toggle-section" data-collapsed-text="Show Task Description & Topics Analyzed" data-expanded-text="Hide Task Description & Topics Analyzed" aria-expanded="false" onclick="return toggleSection(this);">Show Task Description & Topics Analyzed</a>
       </p>
       <div class="teaching-desc-text" style="display: none;">
         <p>{{ post.teaching_desc }}</p>
@@ -112,7 +112,7 @@
 
     {% if post.postconf and post.collection != 'news' %}
       <p>
-        <a href="#" class="toggle-postconf" onclick="togglePostConf(this); return false;">ƒ- Post-Conference Update</a>
+        <a href="#" class="toggle-postconf toggle-section" data-collapsed-text="Show Post-Conference Update" data-expanded-text="Hide Post-Conference Update" aria-expanded="false" onclick="return toggleSection(this);">Show Post-Conference Update</a>
       </p>
       <div class="postconf-text" style="display: none;">
         {{ post.postconf_text | markdownify }}
@@ -159,29 +159,20 @@
 </div>
 
 <script>
-  function toggleAbstract(el) {
-    const abstract = el.parentElement.nextElementSibling;
-    const isVisible = abstract.style.display === "block";
-    abstract.style.display = isVisible ? "none" : "block";
-    el.textContent = isVisible ? "ƒ- Abstract" : "ƒ-¬ Abstract";
-  }
-</script>
-
-
-<script>
-  function toggleTeachingDesc(el) {
-    const desc = el.parentElement.nextElementSibling;
-    const isVisible = desc.style.display === "block";
-    desc.style.display = isVisible ? "none" : "block";
-    el.textContent = isVisible ? "ƒ- Task Description & Topics Analyzed" : "ƒ-¬ Task Description & Topics Analyzed";
-  }
-</script>
-
-<script>
-  function togglePostConf(el) {
+  function toggleSection(el) {
     const section = el.parentElement.nextElementSibling;
-    const isVisible = section.style.display === "block";
+    const isVisible = section && section.style.display === "block";
+    if (!section) return false;
+
     section.style.display = isVisible ? "none" : "block";
-    el.textContent = isVisible ? "ƒ- Post-Conference Update" : "ƒ-¬ Post-Conference Update";
+    const expandedText = el.dataset.expandedText;
+    const collapsedText = el.dataset.collapsedText;
+
+    if (expandedText && collapsedText) {
+      el.textContent = isVisible ? collapsedText : expandedText;
+    }
+
+    el.setAttribute("aria-expanded", isVisible ? "false" : "true");
+    return false;
   }
 </script>

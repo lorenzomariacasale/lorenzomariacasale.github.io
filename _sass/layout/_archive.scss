@@ -57,6 +57,7 @@ h3.archive__subtitle {
   font-family: $sans-serif-narrow;
   font-size: $type-size-5;
   font-style: italic;
+  overflow-wrap: anywhere;
 
   a + a {
     opacity: 0.5;
@@ -83,6 +84,7 @@ h3.archive__subtitle {
 
 .archive__item-title-inline {
   font-style: italic;
+  overflow-wrap: anywhere;
 }
 
 .archive__item-post {
