@@ -57,7 +57,9 @@ h3.archive__subtitle {
   font-family: $sans-serif-narrow;
   font-size: $type-size-5;
   font-style: italic;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  display: inline;
 
   a + a {
     opacity: 0.5;
@@ -85,7 +87,9 @@ h3.archive__subtitle {
 
 .archive__item-title-inline {
   font-style: italic;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  display: inline;
 }
 
 .archive__item-post {
@@ -294,11 +298,9 @@ h3.archive__subtitle {
   font-size: inherit;          // inherits the heading size
   font-weight: bold;           // looks like other titles
   line-height: inherit;
-  display: inline-block;
+  display: inline;             // Changed from inline-block to inline
   cursor: text !important;     // forces text-cursor (or use 'default' if you prefer)
   text-decoration: none !important;
   color: inherit !important;   // disables any link coloring
   pointer-events: none;        // blocks any accidental hover effects or JS
 }
-
-

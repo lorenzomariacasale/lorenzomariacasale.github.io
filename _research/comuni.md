@@ -4,8 +4,7 @@ collection: research
 category: wp
 #permalink: /research/comuni
 excerpt: >
-  With <a href="https://sites.google.com/nyu.edu/lucavitale/">Luca Vitale</a> (New York University)<br>
-  <span style="font-size: 90%;">Previously circulated as: <em>"Large-Family Mayors: Undermined Accountability in Italian Municipalities"</em> and "Family Ties and Undermined Accountability in Italian Municipalities"</span>
+  With <a href="https://sites.google.com/nyu.edu/lucavitale/">Luca Vitale</a> (New York University)
 abstract: >
   The concept of electoral accountability is foundational to democratic systems. But can family ties undermine this core mechanism? While previous research has shown how factors like electoral competition, polarization, and access to information shape accountability, it has often overlooked the impact of politicians’ connections and familial ties. We argue that politicians embedded in large family networks benefit from unconditional electoral support from their relatives, reducing their incentive to perform well in office. Employing a two-way fixed effects model and a regression discontinuity design in Italian municipal elections from 2000 to 2020, we find that having a mayor from a large family leads to poorer economic performance; nonetheless, despite this underperformance, such mayors do not face negative electoral consequences. These findings reveal how family ties can alter politicians’ incentives to perform and undermine accountability in democratic systems.
 norender: true
