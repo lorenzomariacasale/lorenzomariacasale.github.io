@@ -30,7 +30,7 @@
       {% assign pre_clean = post.pre | to_s | strip %}
       {% assign post_clean = post.post | to_s | strip %}
       {% assign excerpt_clean = post.excerpt | to_s | strip %}
-      <p class="archive__news-inline" itemprop="headline">
+      {%- capture news_line -%}
         {%- if pre_clean != '' -%}<span class="archive__item-pre">{{ pre_clean }}</span>{%- if title != '' -%} {% endif -%}{%- endif -%}
         <span class="archive__item-title-inline">
           {% if post.norender %}
@@ -47,8 +47,9 @@
         {%- if post_clean != '' -%}
           {%- if post_clean == '.' -%}<span class="archive__item-post">{{ post_clean }}</span>{%- else -%} <span class="archive__item-post">{{ post.post | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>{%- endif -%}
         {%- endif -%}
-        {%- if excerpt_clean != '' -%} {% if post_clean != '' %} {% endif -%}&mdash; <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>{%- endif -%}
-      </p>
+        {%- if excerpt_clean != '' -%} &mdash; <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>{%- endif -%}
+      {%- endcapture -%}
+      <p class="archive__news-inline" itemprop="headline">{{ news_line | strip }}</p>
     {% else %}
       <h2 class="archive__item-title" itemprop="headline">
         {% if post.norender %}
