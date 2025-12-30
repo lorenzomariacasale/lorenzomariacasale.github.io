@@ -45,8 +45,7 @@
           {%- else -%}
             <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
           {%- endif -%}
-        </span>
-        {%- if post_clean != '' -%}
+        </span>{%- if post_clean != '' -%}
           {%- if post_clean == '.' -%}
             <span class="archive__item-post">{{ post_clean }}</span>
           {%- else -%}
