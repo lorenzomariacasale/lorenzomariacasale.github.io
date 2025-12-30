@@ -52,15 +52,15 @@
       {%- endcapture -%}
       {%- capture news_line -%}
         {%- if pre_clean != '' and title != '' and post_clean != '' and post_clean != '.' and excerpt_clean != '' -%}
-          <span class="archive__item-pre">{{ pre_clean }}</span> {{ title_html | strip }} <span class="archive__item-post">{{ post_display | strip }}</span> &mdash; <span class="archive__item-inline-excerpt">{{ excerpt_display | strip }}</span>
+          <span class="archive__item-pre">{{ pre_clean }}</span>{{ title_html | strip }} <span class="archive__item-post">{{ post_display | strip }}</span> &mdash; <span class="archive__item-inline-excerpt">{{ excerpt_display | strip }}</span>
         {%- elsif pre_clean != '' and title != '' and post_clean != '' and post_clean != '.' and excerpt_clean == '' -%}
-          <span class="archive__item-pre">{{ pre_clean }}</span> {{ title_html | strip }} <span class="archive__item-post">{{ post_display | strip }}</span>
+          <span class="archive__item-pre">{{ pre_clean }}</span>{{ title_html | strip }} <span class="archive__item-post">{{ post_display | strip }}</span>
         {%- elsif pre_clean != '' and title != '' and post_clean == '.' and excerpt_clean == '' -%}
-          <span class="archive__item-pre">{{ pre_clean }}</span> {{ title_html | strip }}<span class="archive__item-post">{{ post_clean }}</span>
+          <span class="archive__item-pre">{{ pre_clean }}</span>{{ title_html | strip }}<span class="archive__item-post">{{ post_clean }}</span>
         {%- elsif pre_clean != '' and title != '' and post_clean == '' and excerpt_clean != '' -%}
-          <span class="archive__item-pre">{{ pre_clean }}</span> {{ title_html | strip }} &mdash; <span class="archive__item-inline-excerpt">{{ excerpt_display | strip }}</span>
+          <span class="archive__item-pre">{{ pre_clean }}</span>{{ title_html | strip }} &mdash; <span class="archive__item-inline-excerpt">{{ excerpt_display | strip }}</span>
         {%- elsif pre_clean != '' and title != '' and post_clean == '' -%}
-          <span class="archive__item-pre">{{ pre_clean }}</span> {{ title_html | strip }}
+          <span class="archive__item-pre">{{ pre_clean }}</span>{{ title_html | strip }}
         {%- elsif title != '' and post_clean == '' and excerpt_clean != '' -%}
           {{ title_html | strip }} &mdash; <span class="archive__item-inline-excerpt">{{ excerpt_display | strip }}</span>
         {%- else -%}
