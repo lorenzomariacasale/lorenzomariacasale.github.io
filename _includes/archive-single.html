@@ -53,7 +53,7 @@
             <span class="archive__item-post"> {{ post.post | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>
           {%- endif -%}
         {%- endif -%}
-        {%- if excerpt_clean != '' -%} &nbsp;&mdash; <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>{%- endif -%}
+        {%- if excerpt_clean != '' -%} &mdash; <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>{%- endif -%}
       {%- endcapture -%}
       <p class="archive__news-inline" itemprop="headline">{{ news_line | strip }}</p>
     {% else %}
