@@ -1,5 +1,5 @@
 ---
-title: "<a href=\"https://sites.google.com/site/doctorissimes3\">20th Doctorissimes Conference</a> "
+title: "20th Doctorissimes Conference"
 pre: 'Presenting at the' 
 date: 2025-04-10
 norender: true
