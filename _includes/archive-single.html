@@ -28,7 +28,7 @@
 
     {% if post.collection == 'news' %}
       <p class="archive__news-inline" itemprop="headline">
-        {%- if post.pre -%}<span class="archive__item-pre">{{ post.pre }}</span>{%- if post.title -%} {% endif -%}{%- endif -%}
+        {%- if post.pre -%}<span class="archive__item-pre">{{ post.pre | strip }}</span>{%- if post.title -%} {% endif -%}{%- endif -%}
         <span class="archive__item-title-inline">
           {% if post.norender %}
             <span class="archive__item-title--static">{{ title }}</span>
@@ -41,8 +41,11 @@
             <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
           {% endif %}
         </span>
-        {%- if post.post -%} <span class="archive__item-post">{{ post.post | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>{%- endif -%}
-        {%- if post.excerpt -%} {% unless post.post %} {% endunless %}&mdash; <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>{%- endif -%}
+        {%- if post.post -%}
+          {%- assign post_clean = post.post | strip -%}
+          {%- if post_clean == '.' -%}<span class="archive__item-post">{{ post_clean }}</span>{%- else -%} <span class="archive__item-post">{{ post.post | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>{%- endif -%}
+        {%- endif -%}
+        {%- if post.excerpt -%} {% if post.post and post.post | strip != '' %} {% endif -%}&mdash; <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>{%- endif -%}
       </p>
     {% else %}
       <h2 class="archive__item-title" itemprop="headline">
