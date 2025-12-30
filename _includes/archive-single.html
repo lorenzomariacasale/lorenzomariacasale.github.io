@@ -57,7 +57,7 @@
           {%- if post_clean == '.' -%}
             &mdash; <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>
           {%- else -%}
-             &mdash; <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>
+            &nbsp;&mdash; <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>
           {%- endif -%}
         {%- endif -%}
       {%- endcapture -%}
