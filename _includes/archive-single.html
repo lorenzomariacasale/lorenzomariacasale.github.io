@@ -32,26 +32,25 @@
       {% assign excerpt_clean = post.excerpt | to_s | strip %}
       {%- capture news_line -%}
         {%- if pre_clean != '' -%}
-          <span class="archive__item-pre">{{ pre_clean }}</span>
-          {%- if title != '' -%} {% endif -%}
+          <span class="archive__item-pre">{{ pre_clean }}</span> 
         {%- endif -%}
         <span class="archive__item-title-inline">
-          {% if post.norender %}
+          {%- if post.norender -%}
             <span class="archive__item-title--static">{{ title }}</span>
-          {% elsif title contains '<a ' %}
+          {%- elsif title contains '<a ' -%}
             {{ title | replace: '<p>', '' | replace: '</p>', '' }}
-          {% elsif post.link %}
+          {%- elsif post.link -%}
             <a href="{{ post.link }}">{{ title }}</a>
             <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-          {% else %}
+          {%- else -%}
             <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-          {% endif %}
+          {%- endif -%}
         </span>
         {%- if post_clean != '' -%}
           {%- if post_clean == '.' -%}
             <span class="archive__item-post">{{ post_clean }}</span>
           {%- else -%}
-             <span class="archive__item-post">{{ post.post | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>
+            <span class="archive__item-post"> {{ post.post | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>
           {%- endif -%}
         {%- endif -%}
         {%- if excerpt_clean != '' -%} &mdash; <span class="archive__item-inline-excerpt">{{ post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip_newlines }}</span>{%- endif -%}
@@ -95,7 +94,7 @@
 
     {% if post.abstract %}
       <p>
-        <a href="#" class="toggle-abstract" onclick="toggleAbstract(this); return false;">ƒ- Abstract</a>
+        <a href="#" class="toggle-abstract" onclick="toggleAbstract(this); return false;">ƒ- Abstract</a>
       </p>
       <div class="abstract-text" style="display: none;">
         <p>{{ post.abstract }}</p>
@@ -104,7 +103,7 @@
 
     {% if post.teaching_desc %}
       <p>
-        <a href="#" class="toggle-teaching-desc" onclick="toggleTeachingDesc(this); return false;">ƒ- Task Description & Topics Analyzed</a>
+        <a href="#" class="toggle-teaching-desc" onclick="toggleTeachingDesc(this); return false;">ƒ- Task Description & Topics Analyzed</a>
       </p>
       <div class="teaching-desc-text" style="display: none;">
         <p>{{ post.teaching_desc }}</p>
@@ -113,7 +112,7 @@
 
     {% if post.postconf and post.collection != 'news' %}
       <p>
-        <a href="#" class="toggle-postconf" onclick="togglePostConf(this); return false;">ƒ- Post-Conference Update</a>
+        <a href="#" class="toggle-postconf" onclick="togglePostConf(this); return false;">ƒ- Post-Conference Update</a>
       </p>
       <div class="postconf-text" style="display: none;">
         {{ post.postconf_text | markdownify }}
@@ -164,7 +163,7 @@
     const abstract = el.parentElement.nextElementSibling;
     const isVisible = abstract.style.display === "block";
     abstract.style.display = isVisible ? "none" : "block";
-    el.textContent = isVisible ? "ƒ- Abstract" : "ƒ-¬ Abstract";
+    el.textContent = isVisible ? "ƒ- Abstract" : "ƒ-¬ Abstract";
   }
 </script>
 
@@ -174,7 +173,7 @@
     const desc = el.parentElement.nextElementSibling;
     const isVisible = desc.style.display === "block";
     desc.style.display = isVisible ? "none" : "block";
-    el.textContent = isVisible ? "ƒ- Task Description & Topics Analyzed" : "ƒ-¬ Task Description & Topics Analyzed";
+    el.textContent = isVisible ? "ƒ- Task Description & Topics Analyzed" : "ƒ-¬ Task Description & Topics Analyzed";
   }
 </script>
 
@@ -183,6 +182,6 @@
     const section = el.parentElement.nextElementSibling;
     const isVisible = section.style.display === "block";
     section.style.display = isVisible ? "none" : "block";
-    el.textContent = isVisible ? "ƒ- Post-Conference Update" : "ƒ-¬ Post-Conference Update";
+    el.textContent = isVisible ? "ƒ- Post-Conference Update" : "ƒ-¬ Post-Conference Update";
   }
 </script>
