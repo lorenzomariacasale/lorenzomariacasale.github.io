@@ -12,7 +12,7 @@ norender: true
 # venue: 'Journal 1'
 # citation: 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
 slidesurl: '/files/comuni_slides.pdf'
-paperurl: '/files/comuni_paper.pdf'
+paperurl: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5587631'
 #twitterurl: 'https://x.com/OfficialSSLazio/status/1929546531851382861'
 ---
 

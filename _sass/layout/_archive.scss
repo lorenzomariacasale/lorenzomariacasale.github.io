@@ -61,6 +61,14 @@ h3.archive__subtitle {
   word-break: break-word;
   display: inline;
 
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   a + a {
     opacity: 0.5;
   }
@@ -129,7 +137,11 @@ h3.archive__subtitle {
   }
 
   .archive__item-title {
-    text-decoration: underline;
+    text-decoration: none;
+  }
+
+  .archive__item-title a {
+    text-decoration: none;
   }
 }
 
