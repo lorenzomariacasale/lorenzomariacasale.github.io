@@ -7,5 +7,5 @@ author_profile: true
 
 [Download CV](/files/CV.pdf)
 
-_Last updated: December 2025_
+_Last updated: January 2026_
 
