@@ -13,4 +13,4 @@ Born and raised in Rome, I hold my Bachelor's and Master's in Economics from Tor
 
 My research sits at the intersection of political economy and cultural economics, investigating how identity signals and expressive behavior shape political and economic outcomes. I combine causal inference with machine learning methods to study social coordination.
 
-Current projects include: kinship networks in Italian politics and cultural expression in American high schools.
+Current projects include: kinship networks in Italian politics and cultural expression in American high schools and politics.
